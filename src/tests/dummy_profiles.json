@@ -1,0 +1,38 @@
+{
+  "apiSettings": {
+    "baseUrl": "http://localhost:8080"
+  },
+  "regularUser": {
+    "email": "david.test@example.com",
+    "password": "DavidPass123!",
+    "firstName": "David",
+    "lastName": "MANZI",
+    "phoneNumber": "0798986565",
+    "address": "Kigali, Rwanda"
+  },
+  "adminUser": {
+    "email": "admin@lostfound.com",
+    "password": "AdminPass123!",
+    "firstName": "David",
+    "lastName": "Admin",
+    "phoneNumber": "0798775533",
+    "address": "Kigali, Rwanda"
+  },
+  "testItems": {
+    "lostItem": {
+      "title": "Lost MacBook Pro",
+      "description": "MacBook Pro M2, Space Gray, lost at the cafe",
+      "category": "Electronics",
+      "location": "Kigali Heights, 3rd Floor",
+      "imageUrl": "https://example.com/macbook.jpg"
+    },
+    "foundItem": {
+      "title": "Found iPad",
+      "description": "iPad Pro 12.9-inch, Silver, found at the tech hub",
+      "category": "Electronics",
+      "location": "Norrsken House, Kigali",
+      "imageUrl": "https://example.com/ipad.jpg",
+      "storageLocation": "Reception Desk"
+    }
+  }
+}
