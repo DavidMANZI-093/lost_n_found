@@ -1,26 +1,54 @@
 
-2025-05-12 15:45:53 [ADMIN] - =====================================
-2025-05-12 15:45:53 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
-2025-05-12 15:45:53 [ADMIN] - =====================================
-2025-05-12 15:45:53 [STEP] - STEP 1: REGISTER ADMIN USER
-2025-05-12 15:45:53 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
-2025-05-12 15:45:53 [INFO] - Request Body: {
-  "phoneNumber": "0799775533",
-  "password": "AdminPass123!",
+2025-05-12 15:48:34 [ADMIN] - =====================================
+2025-05-12 15:48:34 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
+2025-05-12 15:48:34 [ADMIN] - =====================================
+2025-05-12 15:48:34 [STEP] - STEP 1: REGISTER ADMIN USER
+2025-05-12 15:48:34 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
+2025-05-12 15:48:34 [INFO] - Request Body: {
   "email": "admin@lostfound.com",
-  "lastName": "User",
+  "phoneNumber": "0799775533",
+  "address": "UNILAK, KK 508 St, Kigali",
   "firstName": "Admin",
-  "address": "UNILAK, KK 508 St, Kigali"
+  "password": "AdminPass123!",
+  "lastName": "User"
 }
-2025-05-12 15:45:57 [ERROR] - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:45:57 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:45:57 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
-2025-05-12 15:45:57 [STEP] - STEP 2: LOGIN WITH ADMIN USER
-2025-05-12 15:45:57 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
-2025-05-12 15:45:57 [INFO] - Request Body: {
+2025-05-12 15:48:34 [ERROR] - Error: 
+{
+  "status": 400,
+  "message": "Email is already in use",
+  "data": null
+}
+2025-05-12 15:48:34 [ERROR] - Error Detail: 
+{
+  "status": 400,
+  "message": "Email is already in use",
+  "data": null
+}
+2025-05-12 15:48:34 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
+2025-05-12 15:48:34 [STEP] - STEP 2: LOGIN WITH ADMIN USER
+2025-05-12 15:48:34 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
+2025-05-12 15:48:34 [INFO] - Request Body: {
   "email": "admin@lostfound.com",
   "password": "AdminPass123!"
 }
-2025-05-12 15:46:01 [ERROR] - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:46:01 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:46:01 [ERROR] - Failed to login as admin, aborting tests
+2025-05-12 15:48:34 [SUCCESS] - Response: {
+  "status": 200,
+  "message": "Authentication successful",
+  "data": {
+    "user": {
+      "id": 2,
+      "email": "admin@lostfound.com",
+      "password": "$2a$10$J3phU5ST8vVCvUqFLmRYOuZB.s.viyL1rzVbXxO6ncCxz7L8R/No2",
+      "firstName": "Admin",
+      "lastName": "User",
+      "phoneNumber": "9876543210",
+      "address": "Admin Office",
+      "createdAt": "2025-05-12T14:27:23.584+02:00",
+      "updatedAt": "2025-05-12T14:27:23.584+02:00",
+      "banned": false,
+      "admin": false
+    },
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoyLCJlbWFpbCI6ImFkbWluQGxvc3Rmb3VuZC5jb20iLCJzdWIiOiJhZG1pbkBsb3N0Zm91bmQuY29tIiwiaWF0IjoxNzQ3MDU3NzE0LCJleHAiOjE3NDcxNDQxMTR9.rIxoeLQWFIMI8zq6vI7_Nrk_HEW9i3Sz5CtYN92o5ak"
+  }
+}
+2025-05-12 15:48:34 [ERROR] - Failed to login as admin, aborting tests

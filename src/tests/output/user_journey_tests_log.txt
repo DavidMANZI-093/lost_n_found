@@ -1,17 +1,59 @@
 
-2025-05-12 15:45:47 [STEP] - =====================================
-2025-05-12 15:45:48 [STEP] - STARTING LOST & FOUND USER JOURNEY TEST
-2025-05-12 15:45:48 [STEP] - =====================================
-2025-05-12 15:45:48 [STEP] - STEP 1: REGISTER NEW USER (justesseciza7435@mymail.com)
-2025-05-12 15:45:48 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register User
-2025-05-12 15:45:48 [INFO] - Request Body: {
+2025-05-12 15:48:32 [STEP] - =====================================
+2025-05-12 15:48:32 [STEP] - STARTING LOST & FOUND USER JOURNEY TEST
+2025-05-12 15:48:33 [STEP] - =====================================
+2025-05-12 15:48:33 [STEP] - STEP 1: REGISTER NEW USER (justesseciza4323@mymail.com)
+2025-05-12 15:48:33 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register User
+2025-05-12 15:48:33 [INFO] - Request Body: {
+  "email": "justesseciza4323@mymail.com",
   "phoneNumber": "0799886644",
-  "password": "SecurePass123!",
-  "email": "justesseciza7435@mymail.com",
-  "lastName": "Justesse",
+  "address": "UNILAK, KK 508 St, Kigali",
   "firstName": "KASOGA",
-  "address": "UNILAK, KK 508 St, Kigali"
+  "password": "SecurePass123!",
+  "lastName": "Justesse"
 }
-2025-05-12 15:45:52 [ERROR] - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:45:52 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:45:52 [ERROR] - Failed to register user, aborting tests
+2025-05-12 15:48:33 [SUCCESS] - Response: {
+  "status": 201,
+  "message": "User registered successfully",
+  "data": {
+    "id": 6,
+    "email": "justesseciza4323@mymail.com",
+    "password": "$2a$10$/0/I4QWhHWbUth.eVSFGB.TAYN/fQewAyvSmwEHJa2RWRDiycs5em",
+    "firstName": "KASOGA",
+    "lastName": "Justesse",
+    "phoneNumber": "0799886644",
+    "address": "UNILAK, KK 508 St, Kigali",
+    "createdAt": "2025-05-12T15:48:33.84+02:00",
+    "updatedAt": "2025-05-12T15:48:33.84+02:00",
+    "banned": false,
+    "admin": false
+  }
+}
+2025-05-12 15:48:33 [SUCCESS] - User registered successfully with ID: 6
+2025-05-12 15:48:33 [STEP] - STEP 2: LOGIN WITH NEW USER
+2025-05-12 15:48:33 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - User Login
+2025-05-12 15:48:33 [INFO] - Request Body: {
+  "email": "justesseciza4323@mymail.com",
+  "password": "SecurePass123!"
+}
+2025-05-12 15:48:34 [SUCCESS] - Response: {
+  "status": 200,
+  "message": "Authentication successful",
+  "data": {
+    "user": {
+      "id": 6,
+      "email": "justesseciza4323@mymail.com",
+      "password": "$2a$10$/0/I4QWhHWbUth.eVSFGB.TAYN/fQewAyvSmwEHJa2RWRDiycs5em",
+      "firstName": "KASOGA",
+      "lastName": "Justesse",
+      "phoneNumber": "0799886644",
+      "address": "UNILAK, KK 508 St, Kigali",
+      "createdAt": "2025-05-12T15:48:33.84+02:00",
+      "updatedAt": "2025-05-12T15:48:33.84+02:00",
+      "banned": false,
+      "admin": false
+    },
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjo2LCJlbWFpbCI6Imp1c3Rlc3NlY2l6YTQzMjNAbXltYWlsLmNvbSIsInN1YiI6Imp1c3Rlc3NlY2l6YTQzMjNAbXltYWlsLmNvbSIsImlhdCI6MTc0NzA1NzcxNCwiZXhwIjoxNzQ3MTQ0MTE0fQ.jjpFn37ydC728ft3xbGQ7eEwI_oB9Nw3vBgW5I9xhiw"
+  }
+}
+2025-05-12 15:48:34 [ERROR] - Failed to login, aborting tests

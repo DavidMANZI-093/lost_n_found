@@ -1,8 +1,16 @@
 
-2025-05-12 15:45:43 - === Starting Lost and Found API Tests ===
-2025-05-12 15:45:43 - Base URL: http://localhost:8080
-2025-05-12 15:45:43 - === Test 1: API Health Check ===
-2025-05-12 15:45:43 - Testing: [GET] http://localhost:8080/api/ - API Health Check
-2025-05-12 15:45:47 - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:45:47 - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:45:47 - API is not responding, stopping tests
+2025-05-12 15:48:32 - === Starting Lost and Found API Tests ===
+2025-05-12 15:48:32 - Base URL: http://localhost:8080
+2025-05-12 15:48:32 - === Test 1: API Health Check ===
+2025-05-12 15:48:32 - Testing: [GET] http://localhost:8080/api/ - API Health Check
+2025-05-12 15:48:32 - Error: 
+{
+  "status": 401,
+  "error": "Full authentication is required to access this resource"
+}
+2025-05-12 15:48:32 - Error Detail: 
+{
+  "status": 401,
+  "error": "Full authentication is required to access this resource"
+}
+2025-05-12 15:48:32 - API is not responding, stopping tests
