@@ -160,7 +160,7 @@ $lostItemBody = @{
     description = "16-inch MacBook Pro, Space Gray, last seen in the Computer Science building room 302"
     category = "Electronics"
     location = "Computer Science Building, Room 302"
-    imageUrl = "https://example.com/macbook.jpg"
+    imageUrl = "https://dummymac.com/macbook.jpg"
     lostDate = (Get-Date).AddDays(-2).ToString("yyyy-MM-ddTHH:mm:ss")
 }
 
@@ -181,7 +181,7 @@ $foundItemBody = @{
     description = "16-inch MacBook Pro, Space Gray, found in the Computer Science building near room 304"
     category = "Electronics"
     location = "Computer Science Building, Room 304"
-    imageUrl = "https://example.com/found_macbook.jpg"
+    imageUrl = "https://dummyfoundmac.com/found_macbook.jpg"
     foundDate = (Get-Date).AddDays(-1).ToString("yyyy-MM-ddTHH:mm:ss")
     storageLocation = "Campus Security Office"
 }

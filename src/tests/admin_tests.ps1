@@ -8,7 +8,7 @@ $baseUrl = "http://localhost:8080"
 $logFile = "$scriptDir\output\admin_tests_log.txt"
 $adminEmail = "admin@lostfound.com"
 $adminPassword = "AdminPass123!"
-$regularUserEmail = "user@example.com"
+$regularUserEmail = "johnmanzi@mymain.com"
 $jwtToken = ""
 $userId = 0
 $pendingLostItemId = 0
@@ -116,8 +116,8 @@ $registerAdminBody = @{
     password = $adminPassword
     firstName = "Admin"
     lastName = "User"
-    phoneNumber = "9876543210"
-    address = "Admin Office"
+    phoneNumber = "0799775533"
+    address = "UNILAK, KK 508 St, Kigali"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signup" -body $registerAdminBody -description "Register Admin User"
@@ -164,10 +164,10 @@ $regularUserEmail = "reguser$randomId@example.com"
 $registerUserBody = @{
     email = $regularUserEmail
     password = "UserPass123!"
-    firstName = "Regular"
-    lastName = "User"
-    phoneNumber = "5551234567"
-    address = "123 User Street"
+    firstName = "MANZI"
+    lastName = "John"
+    phoneNumber = "0799765432"
+    address = "UNILAK, KK 508 St, Kigali"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signup" -body $registerUserBody -description "Register Regular User"
@@ -187,7 +187,7 @@ $pendingLostItemBody = @{
     description = "Brown leather wallet with initials JD"
     category = "Personal Items"
     location = "Campus Gym"
-    imageUrl = "https://example.com/wallet.jpg"
+    imageUrl = "https://dummywallet.com/wallet.jpg"
     lostDate = (Get-Date).AddDays(-1).ToString("yyyy-MM-ddTHH:mm:ss")
 }
 
@@ -203,7 +203,7 @@ $pendingFoundItemBody = @{
     description = "Set of car and house keys with a blue keychain"
     category = "Personal Items"
     location = "Parking Lot B"
-    imageUrl = "https://example.com/keys.jpg"
+    imageUrl = "https://dummykeys.com/keys.jpg"
     foundDate = (Get-Date).AddDays(-1).ToString("yyyy-MM-ddTHH:mm:ss")
     storageLocation = "Security Office"
 }
