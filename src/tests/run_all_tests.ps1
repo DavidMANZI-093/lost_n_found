@@ -116,5 +116,5 @@ Write-Host "Test Completed: $endTime"
 Write-Host "Summary saved to: $summaryFile"
 
 # Open summary file
-Write-Host "Opening summary file..."
-Invoke-Item $summaryFile
+# Write-Host "Opening summary file..."
+# Invoke-Item $summaryFile

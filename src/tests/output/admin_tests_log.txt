@@ -1,10 +1,10 @@
 
-2025-05-12 14:28:24 [ADMIN] - =====================================
-2025-05-12 14:28:24 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
-2025-05-12 14:28:24 [ADMIN] - =====================================
-2025-05-12 14:28:24 [STEP] - STEP 1: REGISTER ADMIN USER
-2025-05-12 14:28:24 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
-2025-05-12 14:28:24 [INFO] - Request Body: {
+2025-05-12 14:32:12 [ADMIN] - =====================================
+2025-05-12 14:32:12 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
+2025-05-12 14:32:12 [ADMIN] - =====================================
+2025-05-12 14:32:12 [STEP] - STEP 1: REGISTER ADMIN USER
+2025-05-12 14:32:12 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
+2025-05-12 14:32:12 [INFO] - Request Body: {
   "firstName": "Admin",
   "address": "Admin Office",
   "email": "admin@lostfound.com",
@@ -12,26 +12,26 @@
   "lastName": "User",
   "password": "AdminPass123!"
 }
-2025-05-12 14:28:24 [ERROR] - Error: 
+2025-05-12 14:32:13 [ERROR] - Error: 
 {
   "status": 400,
   "message": "Email is already in use",
   "data": null
 }
-2025-05-12 14:28:24 [ERROR] - Error Detail: 
+2025-05-12 14:32:13 [ERROR] - Error Detail: 
 {
   "status": 400,
   "message": "Email is already in use",
   "data": null
 }
-2025-05-12 14:28:24 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
-2025-05-12 14:28:24 [STEP] - STEP 2: LOGIN WITH ADMIN USER
-2025-05-12 14:28:24 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
-2025-05-12 14:28:24 [INFO] - Request Body: {
+2025-05-12 14:32:13 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
+2025-05-12 14:32:13 [STEP] - STEP 2: LOGIN WITH ADMIN USER
+2025-05-12 14:32:13 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
+2025-05-12 14:32:13 [INFO] - Request Body: {
   "password": "AdminPass123!",
   "email": "admin@lostfound.com"
 }
-2025-05-12 14:28:24 [SUCCESS] - Response: {
+2025-05-12 14:32:13 [SUCCESS] - Response: {
   "status": 200,
   "message": "Authentication successful",
   "data": {
@@ -48,7 +48,7 @@
       "admin": false,
       "banned": false
     },
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoyLCJlbWFpbCI6ImFkbWluQGxvc3Rmb3VuZC5jb20iLCJzdWIiOiJhZG1pbkBsb3N0Zm91bmQuY29tIiwiaWF0IjoxNzQ3MDUyOTA0LCJleHAiOjE3NDcxMzkzMDR9.oZjkXc8lqCKqZH22wYytrQfDEJKoto9WG4RKcqfh4TU"
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoyLCJlbWFpbCI6ImFkbWluQGxvc3Rmb3VuZC5jb20iLCJzdWIiOiJhZG1pbkBsb3N0Zm91bmQuY29tIiwiaWF0IjoxNzQ3MDUzMTMzLCJleHAiOjE3NDcxMzk1MzN9.YJ4AP5t0sMyh-8FTV4QH1ApPm-NBqfc3B8_jRxUDzLg"
   }
 }
-2025-05-12 14:28:24 [ERROR] - Failed to login as admin, aborting tests
+2025-05-12 14:32:13 [ERROR] - Failed to login as admin, aborting tests
