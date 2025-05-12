@@ -1,18 +1,30 @@
 # Lost and Found API Admin Functionality Test Script
-# Author: KASOGA Justesse
-# Reg: 11471/2024
+# Author: David MANZI
+# Customized for demonstration purposes
 
 # Set up test variables
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $baseUrl = "http://localhost:8080"
 $logFile = "$scriptDir\output\admin_tests_log.txt"
-$adminEmail = "admin@lostfound.com"
+$adminEmail = "davidmanzi@example.com"
 $adminPassword = "AdminPass123!"
-$regularUserEmail = "johnmanzi@mymain.com"
+$regularUserEmail = "user@example.com"
 $jwtToken = ""
 $userId = 0
 $pendingLostItemId = 0
 $pendingFoundItemId = 0
+
+# Reset database before tests
+Write-Host "Resetting database before running tests..."
+try {
+    & "$scriptDir\reset_database.ps1"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Warning: Database reset failed. Tests may have unexpected results." -ForegroundColor Yellow
+    }
+}
+catch {
+    Write-Host "Warning: Database reset script error: $_" -ForegroundColor Yellow
+}
 
 # Ensure output directory exists
 New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
@@ -20,28 +32,36 @@ New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
 # Start fresh log file
 "" | Out-File -FilePath $logFile
 
-# Helper function to log messages
-function Log-Message {
+# Helper function to log messages - uses approved PowerShell verb
+function Write-TestLog {
     param (
         [string]$message,
         [string]$level = "INFO"
     )
     
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    
     $colorMap = @{
         "INFO" = "White"
         "SUCCESS" = "Green"
         "WARNING" = "Yellow"
         "ERROR" = "Red"
-        "STEP" = "Magenta"
-        "ADMIN" = "Blue"
+        "STEP" = "Cyan"
+        "ADMIN" = "Magenta"
     }
     
     $color = $colorMap[$level]
     
     "$timestamp [$level] - $message" | Out-File -FilePath $logFile -Append
     Write-Host "$timestamp [$level] - $message" -ForegroundColor $color
+}
+
+# For backward compatibility
+function Log-Message {
+    param(
+        [string]$message,
+        [string]$level = "INFO"
+    )
+    Write-TestLog $message $level
 }
 
 # Helper function for API requests
@@ -59,9 +79,9 @@ function Invoke-ApiRequest {
     Log-Message "REQUESTING: [$method] $url - $description" -level "STEP"
     
     $jsonBody = $null
-    if ($body -ne $null) {
+    if ($null -ne $body) {
         $jsonBody = $body | ConvertTo-Json
-        Log-Message "Request Body: $jsonBody"
+        Log-Message "Request Body: $jsonBody" -level "INFO"
     }
     
     try {
@@ -72,7 +92,7 @@ function Invoke-ApiRequest {
             Headers = $headers
         }
         
-        if ($jsonBody -ne $null -and ($method -eq "POST" -or $method -eq "PUT" -or $method -eq "PATCH")) {
+        if ($null -ne $jsonBody -and ($method -eq "POST" -or $method -eq "PUT" -or $method -eq "PATCH")) {
             $params.Body = $jsonBody
         }
         
@@ -114,10 +134,10 @@ Log-Message "STEP 1: REGISTER ADMIN USER" -level "STEP"
 $registerAdminBody = @{
     email = $adminEmail
     password = $adminPassword
-    firstName = "Admin"
-    lastName = "User"
-    phoneNumber = "0799775533"
-    address = "UNILAK, KK 508 St, Kigali"
+    firstName = "David"
+    lastName = "Admin"
+    phoneNumber = "0798775533"
+    address = "Kigali, Rwanda"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signup" -body $registerAdminBody -description "Register Admin User"

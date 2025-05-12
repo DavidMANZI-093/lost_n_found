@@ -1,16 +1,16 @@
 
-2025-05-12 15:48:32 - === Starting Lost and Found API Tests ===
-2025-05-12 15:48:32 - Base URL: http://localhost:8080
-2025-05-12 15:48:32 - === Test 1: API Health Check ===
-2025-05-12 15:48:32 - Testing: [GET] http://localhost:8080/api/ - API Health Check
-2025-05-12 15:48:32 - Error: 
+2025-05-12 15:56:33 - === Starting Lost and Found API Tests ===
+2025-05-12 15:56:33 - Base URL: http://localhost:8080
+2025-05-12 15:56:33 - === Test 1: API Health Check ===
+2025-05-12 15:56:33 - Testing: [GET] http://localhost:8080/api/ - API Health Check
+2025-05-12 15:56:34 - Error: 
 {
   "status": 401,
   "error": "Full authentication is required to access this resource"
 }
-2025-05-12 15:48:32 - Error Detail: 
+2025-05-12 15:56:34 - Error Detail: 
 {
   "status": 401,
   "error": "Full authentication is required to access this resource"
 }
-2025-05-12 15:48:32 - API is not responding, stopping tests
+2025-05-12 15:56:34 - API is not responding, stopping tests

@@ -1,6 +1,6 @@
 # Lost and Found API Test Script
-# Author: KASOGA Justesse
-# Reg: 11471/2024
+# Author: David MANZI
+# Customized for demonstration purposes
 
 # Set up test variables
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -10,6 +10,18 @@ $testCasesFile = "$scriptDir\output\test_cases.txt"
 $resultsFile = "$scriptDir\output\test_results.txt"
 $jwtToken = ""
 
+# Reset database before tests
+Write-Host "Resetting database before running tests..."
+try {
+    & "$scriptDir\reset_database.ps1"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Warning: Database reset failed. Tests may have unexpected results." -ForegroundColor Yellow
+    }
+}
+catch {
+    Write-Host "Warning: Database reset script error: $_" -ForegroundColor Yellow
+}
+
 # Ensure output directory exists
 New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
 
@@ -18,8 +30,8 @@ New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
 "" | Out-File -FilePath $testCasesFile
 "" | Out-File -FilePath $resultsFile
 
-# Helper function to log messages
-function Log-Message {
+# Helper function to log messages - uses approved PowerShell verb
+function Write-TestLog {
     param (
         [string]$message
     )
@@ -27,6 +39,12 @@ function Log-Message {
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     "$timestamp - $message" | Out-File -FilePath $logFile -Append
     Write-Host "$timestamp - $message"
+}
+
+# For backward compatibility
+function Log-Message { 
+    param([string]$message) 
+    Write-TestLog $message 
 }
 
 # Helper function for API requests
@@ -103,12 +121,12 @@ else {
 # Test 2: User Registration
 Log-Message "=== Test 2: User Registration ==="
 $registerBody = @{
-    email = "testuser@example.com"
-    password = "password123"
-    firstName = "MANZI"
-    lastName = "John"
+    email = "david.test@example.com"
+    password = "DavidPass123!"
+    firstName = "David"
+    lastName = "MANZI"
     phoneNumber = "0798986565"
-    address = "123 Test Street"
+    address = "Kigali, Rwanda"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signup" -body $registerBody -description "User Registration"
@@ -120,8 +138,8 @@ if ($response) {
 # Test 3: User Login
 Log-Message "=== Test 3: User Login ==="
 $loginBody = @{
-    email = "testuser@example.com"
-    password = "password123"
+    email = "david.test@example.com"
+    password = "DavidPass123!"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signin" -body $loginBody -description "User Login"
@@ -140,11 +158,11 @@ $authHeaders = @{
 # Test 4: Create a Lost Item
 Log-Message "=== Test 4: Create Lost Item ==="
 $lostItemBody = @{
-    title = "Lost Smartphone"
-    description = "iPhone 14 Pro, Space Gray, lost at the library"
+    title = "Lost MacBook Pro"
+    description = "MacBook Pro M2, Space Gray, lost at the cafe"
     category = "Electronics"
-    location = "University Library"
-    imageUrl = "https://dummyiphone.com/iphone.jpg"
+    location = "Kigali Heights, 3rd Floor"
+    imageUrl = "https://example.com/macbook.jpg"
     lostDate = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss")
 }
 
@@ -158,13 +176,13 @@ if ($response) {
 # Test 5: Create a Found Item
 Log-Message "=== Test 5: Create Found Item ==="
 $foundItemBody = @{
-    title = "Found Laptop"
-    description = "Dell XPS 13, found at the cafeteria"
+    title = "Found iPad"
+    description = "iPad Pro 12.9-inch, Silver, found at the tech hub"
     category = "Electronics"
-    location = "University Cafeteria"
-    imageUrl = "https://dummylaptop.com/laptop.jpg"
+    location = "Norrsken House, Kigali"
+    imageUrl = "https://example.com/ipad.jpg"
     foundDate = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss")
-    storageLocation = "Lost and Found Office"
+    storageLocation = "Reception Desk"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/found-items" -body $foundItemBody -headers $authHeaders -description "Create Found Item"

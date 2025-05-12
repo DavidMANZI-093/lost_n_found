@@ -1,59 +1,59 @@
 
-2025-05-12 15:48:32 [STEP] - =====================================
-2025-05-12 15:48:32 [STEP] - STARTING LOST & FOUND USER JOURNEY TEST
-2025-05-12 15:48:33 [STEP] - =====================================
-2025-05-12 15:48:33 [STEP] - STEP 1: REGISTER NEW USER (justesseciza4323@mymail.com)
-2025-05-12 15:48:33 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register User
-2025-05-12 15:48:33 [INFO] - Request Body: {
-  "email": "justesseciza4323@mymail.com",
-  "phoneNumber": "0799886644",
-  "address": "UNILAK, KK 508 St, Kigali",
-  "firstName": "KASOGA",
-  "password": "SecurePass123!",
-  "lastName": "Justesse"
+2025-05-12 15:56:35 [STEP] - =====================================
+2025-05-12 15:56:35 [STEP] - STARTING LOST & FOUND USER JOURNEY TEST
+2025-05-12 15:56:35 [STEP] - =====================================
+2025-05-12 15:56:35 [STEP] - STEP 1: REGISTER NEW USER (david.test1535@example.com)
+2025-05-12 15:56:35 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register User
+2025-05-12 15:56:35 [INFO] - Request Body: {
+  "email": "david.test1535@example.com",
+  "phoneNumber": "0798986565",
+  "address": "Kigali, Rwanda",
+  "firstName": "David",
+  "password": "DavidPass123!",
+  "lastName": "MANZI"
 }
-2025-05-12 15:48:33 [SUCCESS] - Response: {
+2025-05-12 15:56:35 [SUCCESS] - Response: {
   "status": 201,
   "message": "User registered successfully",
   "data": {
-    "id": 6,
-    "email": "justesseciza4323@mymail.com",
-    "password": "$2a$10$/0/I4QWhHWbUth.eVSFGB.TAYN/fQewAyvSmwEHJa2RWRDiycs5em",
-    "firstName": "KASOGA",
-    "lastName": "Justesse",
-    "phoneNumber": "0799886644",
-    "address": "UNILAK, KK 508 St, Kigali",
-    "createdAt": "2025-05-12T15:48:33.84+02:00",
-    "updatedAt": "2025-05-12T15:48:33.84+02:00",
+    "id": 2,
+    "email": "david.test1535@example.com",
+    "password": "$2a$10$i//em1onwCDCn3VodnKoC.pfbFZWll0zS1225c7uTEe1DDED2f8Sy",
+    "firstName": "David",
+    "lastName": "MANZI",
+    "phoneNumber": "0798986565",
+    "address": "Kigali, Rwanda",
+    "createdAt": "2025-05-12T15:56:35.77+02:00",
+    "updatedAt": "2025-05-12T15:56:35.77+02:00",
     "banned": false,
     "admin": false
   }
 }
-2025-05-12 15:48:33 [SUCCESS] - User registered successfully with ID: 6
-2025-05-12 15:48:33 [STEP] - STEP 2: LOGIN WITH NEW USER
-2025-05-12 15:48:33 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - User Login
-2025-05-12 15:48:33 [INFO] - Request Body: {
-  "email": "justesseciza4323@mymail.com",
-  "password": "SecurePass123!"
+2025-05-12 15:56:35 [SUCCESS] - User registered successfully with ID: 2
+2025-05-12 15:56:35 [STEP] - STEP 2: LOGIN WITH NEW USER
+2025-05-12 15:56:35 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - User Login
+2025-05-12 15:56:35 [INFO] - Request Body: {
+  "email": "david.test1535@example.com",
+  "password": "DavidPass123!"
 }
-2025-05-12 15:48:34 [SUCCESS] - Response: {
+2025-05-12 15:56:36 [SUCCESS] - Response: {
   "status": 200,
   "message": "Authentication successful",
   "data": {
     "user": {
-      "id": 6,
-      "email": "justesseciza4323@mymail.com",
-      "password": "$2a$10$/0/I4QWhHWbUth.eVSFGB.TAYN/fQewAyvSmwEHJa2RWRDiycs5em",
-      "firstName": "KASOGA",
-      "lastName": "Justesse",
-      "phoneNumber": "0799886644",
-      "address": "UNILAK, KK 508 St, Kigali",
-      "createdAt": "2025-05-12T15:48:33.84+02:00",
-      "updatedAt": "2025-05-12T15:48:33.84+02:00",
+      "id": 2,
+      "email": "david.test1535@example.com",
+      "password": "$2a$10$i//em1onwCDCn3VodnKoC.pfbFZWll0zS1225c7uTEe1DDED2f8Sy",
+      "firstName": "David",
+      "lastName": "MANZI",
+      "phoneNumber": "0798986565",
+      "address": "Kigali, Rwanda",
+      "createdAt": "2025-05-12T15:56:35.77+02:00",
+      "updatedAt": "2025-05-12T15:56:35.77+02:00",
       "banned": false,
       "admin": false
     },
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjo2LCJlbWFpbCI6Imp1c3Rlc3NlY2l6YTQzMjNAbXltYWlsLmNvbSIsInN1YiI6Imp1c3Rlc3NlY2l6YTQzMjNAbXltYWlsLmNvbSIsImlhdCI6MTc0NzA1NzcxNCwiZXhwIjoxNzQ3MTQ0MTE0fQ.jjpFn37ydC728ft3xbGQ7eEwI_oB9Nw3vBgW5I9xhiw"
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoyLCJlbWFpbCI6ImRhdmlkLnRlc3QxNTM1QGV4YW1wbGUuY29tIiwic3ViIjoiZGF2aWQudGVzdDE1MzVAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDcwNTgxOTUsImV4cCI6MTc0NzE0NDU5NX0.hSlqL64pPRLyuJrfMaSkTR2no1Ge4NvDibqVNgFHHw4"
   }
 }
-2025-05-12 15:48:34 [ERROR] - Failed to login, aborting tests
+2025-05-12 15:56:36 [ERROR] - Failed to login, aborting tests

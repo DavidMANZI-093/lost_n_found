@@ -1,0 +1,5 @@
+
+2025-05-12 15:56:36 [STEP] - Resetting database...
+2025-05-12 15:56:36 [WARNING] - This will truncate all tables in the lost_n_found database!
+2025-05-12 15:56:36 [SUCCESS] - Database reset successfully!
+2025-05-12 15:56:36 [INFO] - Admin user created with email: admin@lostfound.com and password: AdminPass123!
