@@ -58,18 +58,19 @@ function Run-Test {
 }
 
 # Define test cases
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $tests = @(
     @{
         Name = "API Basic Tests"
-        Script = ".\api_tests.ps1"
+        Script = "$scriptDir\api_tests.ps1"
     },
     @{
         Name = "User Journey Tests"
-        Script = ".\user_journey_tests.ps1"
+        Script = "$scriptDir\user_journey_tests.ps1"
     },
     @{
         Name = "Admin Functionality Tests"
-        Script = ".\admin_tests.ps1"
+        Script = "$scriptDir\admin_tests.ps1"
     }
 )
 

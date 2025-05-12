@@ -3,8 +3,9 @@
 # Reg: 11471/2024
 
 # Set up test variables
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $baseUrl = "http://localhost:8080"
-$logFile = ".\output\admin_tests_log.txt"
+$logFile = "$scriptDir\output\admin_tests_log.txt"
 $adminEmail = "admin@lostfound.com"
 $adminPassword = "AdminPass123!"
 $regularUserEmail = "user@example.com"
@@ -14,7 +15,7 @@ $pendingLostItemId = 0
 $pendingFoundItemId = 0
 
 # Ensure output directory exists
-New-Item -ItemType Directory -Force -Path ".\output" | Out-Null
+New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
 
 # Start fresh log file
 "" | Out-File -FilePath $logFile

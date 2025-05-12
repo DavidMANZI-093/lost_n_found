@@ -3,14 +3,15 @@
 # Reg: 11471/2024
 
 # Set up test variables
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $baseUrl = "http://localhost:8080"
-$logFile = ".\output\api_tests_log.txt"
-$testCasesFile = ".\output\test_cases.txt"
-$resultsFile = ".\output\test_results.txt"
+$logFile = "$scriptDir\output\api_tests_log.txt"
+$testCasesFile = "$scriptDir\output\test_cases.txt"
+$resultsFile = "$scriptDir\output\test_results.txt"
 $jwtToken = ""
 
 # Ensure output directory exists
-New-Item -ItemType Directory -Force -Path ".\output" | Out-Null
+New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
 
 # Start fresh log files
 "" | Out-File -FilePath $logFile

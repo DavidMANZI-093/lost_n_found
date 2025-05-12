@@ -1,0 +1,16 @@
+
+2025-05-12 14:28:20 - === Starting Lost and Found API Tests ===
+2025-05-12 14:28:20 - Base URL: http://localhost:8080
+2025-05-12 14:28:20 - === Test 1: API Health Check ===
+2025-05-12 14:28:20 - Testing: [GET] http://localhost:8080/api/ - API Health Check
+2025-05-12 14:28:21 - Error: 
+{
+  "status": 401,
+  "error": "Full authentication is required to access this resource"
+}
+2025-05-12 14:28:21 - Error Detail: 
+{
+  "status": 401,
+  "error": "Full authentication is required to access this resource"
+}
+2025-05-12 14:28:21 - API is not responding, stopping tests

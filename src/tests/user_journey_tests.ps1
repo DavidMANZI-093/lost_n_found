@@ -3,15 +3,16 @@
 # Reg: 11471/2024
 
 # Set up test variables
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $baseUrl = "http://localhost:8080"
-$logFile = ".\output\user_journey_log.txt"
+$logFile = "$scriptDir\output\user_journey_tests_log.txt"
 $jwtToken = ""
 $userId = 0
 $lostItemId = 0
 $foundItemId = 0
 
 # Ensure output directory exists
-New-Item -ItemType Directory -Force -Path ".\output" | Out-Null
+New-Item -ItemType Directory -Force -Path "$scriptDir\output" | Out-Null
 
 # Start fresh log file
 "" | Out-File -FilePath $logFile
