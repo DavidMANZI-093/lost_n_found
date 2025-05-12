@@ -1,0 +1,38 @@
+# Java stuff
+*.class
+*.jar
+*.war
+*.log
+
+# Maven
+/target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+*.vs/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Test outputs
+/tests/output/
+
+# Database files (optional)
+*.db
+*.mv.db
+*.h2.db
