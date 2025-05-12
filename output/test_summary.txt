@@ -1,0 +1,23 @@
+
+=====================================
+LOST AND FOUND API TEST SUMMARY
+=====================================
+Test Started: 05/12/2025 14:22:56
+
+❌ ERROR: API Basic Tests - The term '.\api_tests.ps1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again. (Duration: 0.0811238 seconds)
+
+❌ ERROR: User Journey Tests - The term '.\user_journey_tests.ps1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again. (Duration: 0.0017599 seconds)
+
+❌ ERROR: Admin Functionality Tests - The term '.\admin_tests.ps1' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again. (Duration: 0.001129 seconds)
+
+=====================================
+SUMMARY
+=====================================
+Total Tests: 3
+Passed: 0
+Failed: 3
+Total Duration: 0.6545773 seconds
+Test Completed: 05/12/2025 14:22:57
