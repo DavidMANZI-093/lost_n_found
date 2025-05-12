@@ -19,7 +19,7 @@ New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 "" | Out-File -FilePath $summaryFile -Append
 
 # Helper function to run test and record result
-function Run-Test {
+function Start-Test {
     param (
         [string]$testName,
         [string]$scriptPath
@@ -77,7 +77,7 @@ $tests = @(
 # Run all tests
 $results = @()
 foreach ($test in $tests) {
-    $result = Run-Test -testName $test.Name -scriptPath $test.Script
+    $result = Start-Test -testName $test.Name -scriptPath $test.Script
     $results += [PSCustomObject]@{
         Name = $test.Name
         Passed = $result

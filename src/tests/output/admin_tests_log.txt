@@ -1,10 +1,10 @@
 
-2025-05-12 16:11:04 [ADMIN] - =====================================
-2025-05-12 16:11:05 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
-2025-05-12 16:11:05 [ADMIN] - =====================================
-2025-05-12 16:11:05 [STEP] - STEP 1: REGISTER ADMIN USER
-2025-05-12 16:11:05 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
-2025-05-12 16:11:05 [INFO] - Request Body: {
+2025-05-12 16:18:57 [ADMIN] - =====================================
+2025-05-12 16:18:57 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
+2025-05-12 16:18:57 [ADMIN] - =====================================
+2025-05-12 16:18:57 [STEP] - STEP 1: REGISTER ADMIN USER
+2025-05-12 16:18:57 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
+2025-05-12 16:18:57 [INFO] - Request Body: {
   "email": "admin@lostfound.com",
   "phoneNumber": "0799775533",
   "address": "UNILAK, KK 508 St, Kigali",
@@ -12,35 +12,35 @@
   "password": "AdminPass123!",
   "lastName": "User"
 }
-2025-05-12 16:11:05 [ERROR] - Error: 
+2025-05-12 16:18:57 [ERROR] - Error: 
 {
   "status": 400,
   "message": "Email is already in use",
   "data": null
 }
-2025-05-12 16:11:05 [ERROR] - Error Detail: 
+2025-05-12 16:18:58 [ERROR] - Error Detail: 
 {
   "status": 400,
   "message": "Email is already in use",
   "data": null
 }
-2025-05-12 16:11:05 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
-2025-05-12 16:11:05 [STEP] - STEP 2: LOGIN WITH ADMIN USER
-2025-05-12 16:11:05 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
-2025-05-12 16:11:05 [INFO] - Request Body: {
+2025-05-12 16:18:58 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
+2025-05-12 16:18:58 [STEP] - STEP 2: LOGIN WITH ADMIN USER
+2025-05-12 16:18:58 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
+2025-05-12 16:18:58 [INFO] - Request Body: {
   "email": "admin@lostfound.com",
   "password": "AdminPass123!"
 }
-2025-05-12 16:11:05 [ERROR] - Error: 
+2025-05-12 16:18:58 [ERROR] - Error: 
 {
   "status": 401,
   "message": "Bad credentials",
   "data": null
 }
-2025-05-12 16:11:05 [ERROR] - Error Detail: 
+2025-05-12 16:18:58 [ERROR] - Error Detail: 
 {
   "status": 401,
   "message": "Bad credentials",
   "data": null
 }
-2025-05-12 16:11:05 [ERROR] - Failed to login as admin, aborting tests
+2025-05-12 16:18:58 [ERROR] - Failed to login as admin, aborting tests
