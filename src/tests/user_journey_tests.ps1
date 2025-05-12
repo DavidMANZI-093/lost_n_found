@@ -107,7 +107,7 @@ Log-Message "=====================================" -level "STEP"
 
 # Step 1: Register a new user with random email to avoid conflicts
 $randomId = Get-Random -Minimum 1000 -Maximum 9999
-$userEmail = "user$randomId@example.com"
+$userEmail = "justesseciza$randomId@mymail.com"
 
 Log-Message "STEP 1: REGISTER NEW USER ($userEmail)" -level "STEP"
 $registerBody = @{
@@ -116,7 +116,7 @@ $registerBody = @{
     firstName = "KASOGA"
     lastName = "Justesse"
     phoneNumber = "0799886644"
-    address = "123 University Avenue"
+    address = "UNILAK, KK 508 St, Kigali"
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signup" -body $registerBody -description "Register User"
