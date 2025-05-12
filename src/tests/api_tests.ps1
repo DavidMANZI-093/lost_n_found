@@ -105,9 +105,9 @@ Log-Message "=== Test 2: User Registration ==="
 $registerBody = @{
     email = "testuser@example.com"
     password = "password123"
-    firstName = "Test"
-    lastName = "User"
-    phoneNumber = "1234567890"
+    firstName = "MANZI"
+    lastName = "John"
+    phoneNumber = "0798986565"
     address = "123 Test Street"
 }
 
@@ -144,7 +144,7 @@ $lostItemBody = @{
     description = "iPhone 14 Pro, Space Gray, lost at the library"
     category = "Electronics"
     location = "University Library"
-    imageUrl = "https://example.com/iphone.jpg"
+    imageUrl = "https://dummyiphone.com/iphone.jpg"
     lostDate = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss")
 }
 
@@ -162,7 +162,7 @@ $foundItemBody = @{
     description = "Dell XPS 13, found at the cafeteria"
     category = "Electronics"
     location = "University Cafeteria"
-    imageUrl = "https://example.com/laptop.jpg"
+    imageUrl = "https://dummylaptop.com/laptop.jpg"
     foundDate = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss")
     storageLocation = "Lost and Found Office"
 }
