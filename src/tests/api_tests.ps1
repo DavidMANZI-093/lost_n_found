@@ -97,7 +97,7 @@ if ($response) {
 }
 else {
     Log-Message "API is not responding, stopping tests"
-    exit
+    exit 1 # Exit with error code
 }
 
 # Test 2: User Registration

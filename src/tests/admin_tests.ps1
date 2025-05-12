@@ -148,7 +148,7 @@ if ($response -and $response.token) {
 }
 else {
     Log-Message "Failed to login as admin, aborting tests" -level "ERROR"
-    exit
+    exit 1 # Exit with error code
 }
 
 # Setup auth headers for subsequent requests

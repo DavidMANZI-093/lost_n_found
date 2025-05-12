@@ -1,26 +1,26 @@
 
-2025-05-12 15:37:35 [ADMIN] - =====================================
-2025-05-12 15:37:35 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
-2025-05-12 15:37:35 [ADMIN] - =====================================
-2025-05-12 15:37:35 [STEP] - STEP 1: REGISTER ADMIN USER
-2025-05-12 15:37:35 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
-2025-05-12 15:37:35 [INFO] - Request Body: {
-  "email": "admin@lostfound.com",
+2025-05-12 15:43:12 [ADMIN] - =====================================
+2025-05-12 15:43:12 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
+2025-05-12 15:43:12 [ADMIN] - =====================================
+2025-05-12 15:43:12 [STEP] - STEP 1: REGISTER ADMIN USER
+2025-05-12 15:43:13 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
+2025-05-12 15:43:13 [INFO] - Request Body: {
   "phoneNumber": "0799775533",
-  "address": "UNILAK, KK 508 St, Kigali",
-  "firstName": "Admin",
   "password": "AdminPass123!",
-  "lastName": "User"
+  "email": "admin@lostfound.com",
+  "lastName": "User",
+  "firstName": "Admin",
+  "address": "UNILAK, KK 508 St, Kigali"
 }
-2025-05-12 15:37:40 [ERROR] - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:37:40 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:37:40 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
-2025-05-12 15:37:40 [STEP] - STEP 2: LOGIN WITH ADMIN USER
-2025-05-12 15:37:40 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
-2025-05-12 15:37:40 [INFO] - Request Body: {
+2025-05-12 15:43:17 [ERROR] - Error: No connection could be made because the target machine actively refused it.
+2025-05-12 15:43:17 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
+2025-05-12 15:43:17 [WARNING] - Failed to register admin user. If the user already exists, proceed with login.
+2025-05-12 15:43:17 [STEP] - STEP 2: LOGIN WITH ADMIN USER
+2025-05-12 15:43:18 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
+2025-05-12 15:43:18 [INFO] - Request Body: {
   "email": "admin@lostfound.com",
   "password": "AdminPass123!"
 }
-2025-05-12 15:37:45 [ERROR] - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:37:45 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:37:45 [ERROR] - Failed to login as admin, aborting tests
+2025-05-12 15:43:22 [ERROR] - Error: No connection could be made because the target machine actively refused it.
+2025-05-12 15:43:22 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
+2025-05-12 15:43:22 [ERROR] - Failed to login as admin, aborting tests

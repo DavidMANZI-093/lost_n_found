@@ -127,7 +127,7 @@ if ($response -and $response.data) {
 }
 else {
     Log-Message "Failed to register user, aborting tests" -level "ERROR"
-    exit
+    exit 1 # Exit with error code
 }
 
 # Step 2: Login with the new user
