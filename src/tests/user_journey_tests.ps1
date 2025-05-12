@@ -4,12 +4,27 @@
 
 # Set up test variables
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$baseUrl = "http://localhost:8080"
+$profilesPath = "$scriptDir\dummy_profiles.json"
 $logFile = "$scriptDir\output\user_journey_tests_log.txt"
 $jwtToken = ""
 $userId = 0
 $lostItemId = 0
 $foundItemId = 0
+
+# Load test profiles
+try {
+    $testProfiles = Get-Content $profilesPath -Raw | ConvertFrom-Json
+    Write-Host "Loaded test profiles successfully" -ForegroundColor Green
+    $baseUrl = $testProfiles.apiSettings.baseUrl
+    $regularUser = $testProfiles.regularUser
+    $adminUser = $testProfiles.adminUser
+    $lostItem = $testProfiles.testItems.lostItem
+    $foundItem = $testProfiles.testItems.foundItem
+} catch {
+    Write-Host "Error loading test profiles: $_" -ForegroundColor Red
+    Write-Host "Using default test profiles" -ForegroundColor Yellow
+    $baseUrl = "http://localhost:8080"
+}
 
 # Reset database before tests
 Write-Host "Resetting database before running tests..."
@@ -127,16 +142,16 @@ Log-Message "=====================================" -level "STEP"
 
 # Step 1: Register a new user with random email to avoid conflicts
 $randomId = Get-Random -Minimum 1000 -Maximum 9999
-$userEmail = "david.test$randomId@example.com"
+$userEmail = "$($regularUser.email.Split('@')[0])$randomId@$($regularUser.email.Split('@')[1])"
 
 Log-Message "STEP 1: REGISTER NEW USER ($userEmail)" -level "STEP"
 $registerBody = @{
     email = $userEmail
-    password = "DavidPass123!"
-    firstName = "David"
-    lastName = "MANZI"
-    phoneNumber = "0798986565"
-    address = "Kigali, Rwanda"
+    password = $regularUser.password
+    firstName = $regularUser.firstName
+    lastName = $regularUser.lastName
+    phoneNumber = $regularUser.phoneNumber
+    address = $regularUser.address
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signup" -body $registerBody -description "Register User"
@@ -154,7 +169,7 @@ else {
 Log-Message "STEP 2: LOGIN WITH NEW USER" -level "STEP"
 $loginBody = @{
     email = $userEmail
-    password = "DavidPass123!"
+    password = $regularUser.password
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/auth/signin" -body $loginBody -description "User Login"
@@ -176,11 +191,11 @@ $authHeaders = @{
 # Step 3: Report a lost item
 Log-Message "STEP 3: REPORT A LOST ITEM" -level "STEP"
 $lostItemBody = @{
-    title = "Lost MacBook Pro"
-    description = "MacBook Pro M2, Space Gray, lost at the cafe"
-    category = "Electronics"
-    location = "Kigali Heights, 3rd Floor"
-    imageUrl = "https://example.com/macbook.jpg"
+    title = $lostItem.title
+    description = $lostItem.description
+    category = $lostItem.category
+    location = $lostItem.location
+    imageUrl = $lostItem.imageUrl
     lostDate = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss")
 }
 
@@ -197,13 +212,13 @@ else {
 # Step 4: Report a found item that matches the lost item
 Log-Message "STEP 4: REPORT A FOUND ITEM" -level "STEP"
 $foundItemBody = @{
-    title = "Found iPad"
-    description = "iPad Pro 12.9-inch, Silver, found at the tech hub"
-    category = "Electronics"
-    location = "Norrsken House, Kigali"
-    imageUrl = "https://example.com/ipad.jpg"
+    title = $foundItem.title
+    description = $foundItem.description
+    category = $foundItem.category
+    location = $foundItem.location
+    imageUrl = $foundItem.imageUrl
     foundDate = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ss")
-    storageLocation = "Reception Desk"
+    storageLocation = $foundItem.storageLocation
 }
 
 $response = Invoke-ApiRequest -method "POST" -endpoint "/api/v1/found-items" -body $foundItemBody -headers $authHeaders -description "Report Found Item"

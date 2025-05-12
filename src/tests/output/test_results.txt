@@ -1,6 +1,3 @@
 
-❌ FAILED: [GET] http://localhost:8080/api/ - API Health Check - 
-{
-  "status": 401,
-  "error": "Full authentication is required to access this resource"
-}
+✅ PASSED: [POST] http://localhost:8080/api/v1/auth/signup - User Registration
+✅ PASSED: [POST] http://localhost:8080/api/v1/auth/signin - User Login

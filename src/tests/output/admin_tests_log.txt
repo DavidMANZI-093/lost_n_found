@@ -1,61 +1,27 @@
 
-2025-05-12 15:56:36 [ADMIN] - =====================================
-2025-05-12 15:56:36 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
-2025-05-12 15:56:36 [ADMIN] - =====================================
-2025-05-12 15:56:36 [STEP] - STEP 1: REGISTER ADMIN USER
-2025-05-12 15:56:36 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register Admin User
-2025-05-12 15:56:36 [INFO] - Request Body: {
-  "email": "davidmanzi@example.com",
-  "phoneNumber": "0798775533",
-  "address": "Kigali, Rwanda",
-  "firstName": "David",
-  "password": "AdminPass123!",
-  "lastName": "Admin"
-}
-2025-05-12 15:56:36 [SUCCESS] - Response: {
-  "status": 201,
-  "message": "User registered successfully",
-  "data": {
-    "id": 2,
-    "email": "davidmanzi@example.com",
-    "password": "$2a$10$57HQiT1FaAe5vr3mJUJURuim4y1NdLvqC3KKM652r3I.uYee8Wwx6",
-    "firstName": "David",
-    "lastName": "Admin",
-    "phoneNumber": "0798775533",
-    "address": "Kigali, Rwanda",
-    "createdAt": "2025-05-12T15:56:36.674+02:00",
-    "updatedAt": "2025-05-12T15:56:36.674+02:00",
-    "banned": false,
-    "admin": false
-  }
-}
-2025-05-12 15:56:36 [SUCCESS] - Admin user registered successfully
-2025-05-12 15:56:36 [WARNING] - Note: At this point, you would need to manually set is_admin=true in the database
-2025-05-12 15:56:36 [WARNING] - For testing purposes, we'll assume this user has admin privileges
-2025-05-12 15:56:36 [STEP] - STEP 2: LOGIN WITH ADMIN USER
-2025-05-12 15:56:36 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
-2025-05-12 15:56:36 [INFO] - Request Body: {
-  "email": "davidmanzi@example.com",
+2025-05-12 16:05:24 [ADMIN] - =====================================
+2025-05-12 16:05:24 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
+2025-05-12 16:05:24 [ADMIN] - =====================================
+2025-05-12 16:05:24 [STEP] - STEP 1: VERIFYING ADMIN USER
+2025-05-12 16:05:24 [INFO] - Using admin user: admin@lostfound.com (from dummy_profiles.json)
+2025-05-12 16:05:24 [INFO] - Password: AdminPass123!
+2025-05-12 16:05:24 [INFO] - Note: The admin user should have been created during database reset
+2025-05-12 16:05:24 [STEP] - STEP 2: LOGIN WITH ADMIN USER
+2025-05-12 16:05:24 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
+2025-05-12 16:05:24 [INFO] - Request Body: {
+  "email": "admin@lostfound.com",
   "password": "AdminPass123!"
 }
-2025-05-12 15:56:36 [SUCCESS] - Response: {
-  "status": 200,
-  "message": "Authentication successful",
-  "data": {
-    "user": {
-      "id": 2,
-      "email": "davidmanzi@example.com",
-      "password": "$2a$10$57HQiT1FaAe5vr3mJUJURuim4y1NdLvqC3KKM652r3I.uYee8Wwx6",
-      "firstName": "David",
-      "lastName": "Admin",
-      "phoneNumber": "0798775533",
-      "address": "Kigali, Rwanda",
-      "createdAt": "2025-05-12T15:56:36.674+02:00",
-      "updatedAt": "2025-05-12T15:56:36.674+02:00",
-      "banned": false,
-      "admin": false
-    },
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoyLCJlbWFpbCI6ImRhdmlkbWFuemlAZXhhbXBsZS5jb20iLCJzdWIiOiJkYXZpZG1hbnppQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3MDU4MTk2LCJleHAiOjE3NDcxNDQ1OTZ9.qrmUupPS227TnWL-lXOEd5EuhOhUiRAkLPNb0G__qo4"
-  }
+2025-05-12 16:05:25 [ERROR] - Error: 
+{
+  "status": 401,
+  "message": "Bad credentials",
+  "data": null
 }
-2025-05-12 15:56:36 [ERROR] - Failed to login as admin, aborting tests
+2025-05-12 16:05:25 [ERROR] - Error Detail: 
+{
+  "status": 401,
+  "message": "Bad credentials",
+  "data": null
+}
+2025-05-12 16:05:25 [ERROR] - Failed to login as admin, aborting tests

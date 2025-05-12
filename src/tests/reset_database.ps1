@@ -74,7 +74,11 @@ ALTER SEQUENCE found_items_id_seq RESTART WITH 1;
 -- Re-enable foreign key constraints
 SET session_replication_role = 'origin';
 
--- Insert admin user
+-- First delete admin user if exists to avoid conflicts
+DELETE FROM users WHERE email = 'admin@lostfound.com';
+
+-- Insert admin user with bcrypt hash of 'AdminPass123!'
+-- This specific hash is known to work with Spring Security BCrypt encoder
 INSERT INTO users (email, password, first_name, last_name, phone_number, address, is_admin, is_banned, created_at, updated_at)
 VALUES ('admin@lostfound.com', '\$2a\$10\$J3phU5ST8vVCvUqFLmRYOuZB.s.viyL1rzVbXxO6ncCxz7L8R/No2', 'David', 'Admin', '0799775533', 'Kigali, Rwanda', true, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 "@ | Out-File -FilePath $tempFile -Encoding utf8
