@@ -148,13 +148,14 @@ Log-Message "=====================================" -level "ADMIN"
 Log-Message "STARTING LOST & FOUND ADMIN TESTS" -level "ADMIN"
 Log-Message "=====================================" -level "ADMIN"
 
-# Step 1: Ensure admin user exists and has proper credentials
-Log-Message "STEP 1: VERIFYING ADMIN USER" -level "STEP"
-Log-Message "Using admin user: $adminEmail (from dummy_profiles.json)" -level "INFO"
-Log-Message "Password: $adminPassword" -level "INFO"
-Log-Message "Note: The admin user should have been created during database reset" -level "INFO"
+# Step 1: Using predefined admin user credentials
+Log-Message "STEP 1: USING PREDEFINED ADMIN USER" -level "STEP"
+Log-Message "Using admin user from database reset: $adminEmail" -level "INFO"
 
-# Step 2: Login with admin user
+# IMPORTANT: We're using the admin user that was created directly in the database by reset_database.ps1
+# This user has is_admin=true in the database, which gives it ROLE_ADMIN authority in Spring Security
+
+# Login with admin user
 Log-Message "STEP 2: LOGIN WITH ADMIN USER" -level "STEP"
 $loginBody = @{
     email = $adminEmail

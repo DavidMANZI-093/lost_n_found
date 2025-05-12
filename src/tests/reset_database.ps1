@@ -77,10 +77,10 @@ SET session_replication_role = 'origin';
 -- First delete admin user if exists to avoid conflicts
 DELETE FROM users WHERE email = 'admin@lostfound.com';
 
--- Insert admin user with bcrypt hash of 'AdminPass123!'
--- This specific hash is known to work with Spring Security BCrypt encoder
+-- Insert admin user with BCrypt encoded password 'Admin123!'
+-- This is using a pre-encoded password compatible with Spring Security BCrypt encoder
 INSERT INTO users (email, password, first_name, last_name, phone_number, address, is_admin, is_banned, created_at, updated_at)
-VALUES ('admin@lostfound.com', '\$2a\$10\$J3phU5ST8vVCvUqFLmRYOuZB.s.viyL1rzVbXxO6ncCxz7L8R/No2', 'David', 'Admin', '0799775533', 'Kigali, Rwanda', true, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+VALUES ('admin@lostfound.com', '\$2a\$10\$3HC5LsNI.z22Iy9QCh0Jfu.0Z.x7NM0I6hg61v9IjPB2uiKvkQKdG', 'David', 'Admin', '0799775533', 'Kigali, Rwanda', true, false, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 "@ | Out-File -FilePath $tempFile -Encoding utf8
     
     # Run the SQL script using psql

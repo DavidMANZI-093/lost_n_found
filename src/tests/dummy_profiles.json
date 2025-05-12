@@ -12,7 +12,7 @@
   },
   "adminUser": {
     "email": "admin@lostfound.com",
-    "password": "AdminPass123!",
+    "password": "Admin123!",
     "firstName": "David",
     "lastName": "Admin",
     "phoneNumber": "0799775533",

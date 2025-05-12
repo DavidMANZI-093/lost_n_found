@@ -1,27 +1,25 @@
 
-2025-05-12 16:05:24 [ADMIN] - =====================================
-2025-05-12 16:05:24 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
-2025-05-12 16:05:24 [ADMIN] - =====================================
-2025-05-12 16:05:24 [STEP] - STEP 1: VERIFYING ADMIN USER
-2025-05-12 16:05:24 [INFO] - Using admin user: admin@lostfound.com (from dummy_profiles.json)
-2025-05-12 16:05:24 [INFO] - Password: AdminPass123!
-2025-05-12 16:05:24 [INFO] - Note: The admin user should have been created during database reset
-2025-05-12 16:05:24 [STEP] - STEP 2: LOGIN WITH ADMIN USER
-2025-05-12 16:05:24 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
-2025-05-12 16:05:24 [INFO] - Request Body: {
+2025-05-12 16:08:29 [ADMIN] - =====================================
+2025-05-12 16:08:29 [ADMIN] - STARTING LOST & FOUND ADMIN TESTS
+2025-05-12 16:08:30 [ADMIN] - =====================================
+2025-05-12 16:08:30 [STEP] - STEP 1: USING PREDEFINED ADMIN USER
+2025-05-12 16:08:30 [INFO] - Using admin user from database reset: admin@lostfound.com
+2025-05-12 16:08:30 [STEP] - STEP 2: LOGIN WITH ADMIN USER
+2025-05-12 16:08:30 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signin - Admin Login
+2025-05-12 16:08:30 [INFO] - Request Body: {
   "email": "admin@lostfound.com",
-  "password": "AdminPass123!"
+  "password": "Admin123!"
 }
-2025-05-12 16:05:25 [ERROR] - Error: 
+2025-05-12 16:08:30 [ERROR] - Error: 
 {
   "status": 401,
   "message": "Bad credentials",
   "data": null
 }
-2025-05-12 16:05:25 [ERROR] - Error Detail: 
+2025-05-12 16:08:30 [ERROR] - Error Detail: 
 {
   "status": 401,
   "message": "Bad credentials",
   "data": null
 }
-2025-05-12 16:05:25 [ERROR] - Failed to login as admin, aborting tests
+2025-05-12 16:08:30 [ERROR] - Failed to login as admin, aborting tests
