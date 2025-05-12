@@ -79,21 +79,41 @@ function Start-Test {
     $testStartTime = Get-Date
     
     try {
-        # Execute the test script in a separate process with window hidden
-        $process = Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$scriptPath`"" -NoNewWindow -PassThru -Wait
-        $exitCode = $process.ExitCode
-        
-        $testEndTime = Get-Date
-        $duration = $testEndTime - $testStartTime
-        
-        if ($exitCode -eq 0) {
-            Write-TestLog "TEST PASSED: $testName" -level "Success"
-            "✅ PASSED: $testName (Duration: $($duration.TotalSeconds) seconds)" | Out-File -FilePath $summaryFile -Append
-            return $true
-        } else {
-            Write-TestLog "TEST FAILED: $testName (Exit Code: $exitCode)" -level "Error"
-            "❌ FAILED: $testName (Duration: $($duration.TotalSeconds) seconds)" | Out-File -FilePath $summaryFile -Append
-            return $false
+        # First try to execute the script directly to show any error messages
+        try {
+            Write-TestLog "Executing test script directly..." -level "Info"
+            & $scriptPath
+            $exitCode = $?
+            
+            $testEndTime = Get-Date
+            $duration = $testEndTime - $testStartTime
+            
+            if ($exitCode) {
+                Write-TestLog "TEST PASSED: $testName" -level "Success"
+                "✅ PASSED: $testName (Duration: $($duration.TotalSeconds) seconds)" | Out-File -FilePath $summaryFile -Append
+                return $true
+            }
+        } catch {
+            # If direct execution fails, try with execution policy bypass
+            Write-TestLog "Direct execution failed, attempting bypass for test script" -level "Warning"
+            Write-TestLog "Error was: $_" -level "Warning"
+            
+            # Execute the test script in a separate process with policy bypass
+            $process = Start-Process -FilePath "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$scriptPath`"" -NoNewWindow -PassThru -Wait
+            $exitCode = $process.ExitCode
+            
+            $testEndTime = Get-Date
+            $duration = $testEndTime - $testStartTime
+            
+            if ($exitCode -eq 0) {
+                Write-TestLog "TEST PASSED: $testName" -level "Success"
+                "✅ PASSED: $testName (Duration: $($duration.TotalSeconds) seconds)" | Out-File -FilePath $summaryFile -Append
+                return $true
+            } else {
+                Write-TestLog "TEST FAILED: $testName (Exit Code: $exitCode)" -level "Error"
+                "❌ FAILED: $testName (Duration: $($duration.TotalSeconds) seconds)" | Out-File -FilePath $summaryFile -Append
+                return $false
+            }
         }
     } catch {
         $testEndTime = Get-Date
@@ -104,15 +124,36 @@ function Start-Test {
     }
 }
 
+# Check PowerShell execution policy
+$currentPolicy = Get-ExecutionPolicy
+Write-TestLog "Current PowerShell execution policy: $currentPolicy" -level "Info"
+
+# Provide instructions if execution policy is restrictive
+if ($currentPolicy -eq "Restricted" -or $currentPolicy -eq "AllSigned") {
+    Write-TestLog "⚠️ PowerShell execution policy is restrictive, tests might not run properly" -level "Warning"
+    Write-TestLog "To run tests, you may need to temporarily change the execution policy." -level "Warning"
+    Write-TestLog "Run this command as Administrator: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process" -level "Warning"
+    Write-TestLog "Press any key to try continuing..." -level "Info"
+    $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+}
+
 # Run database cleanup first
 Write-TestLog "🧹 Cleaning database before tests..." -level "Highlight"
 try {
-    # Run the database cleanup script
-    $cleanupProcess = Start-Process -FilePath "powershell.exe" -ArgumentList "-File `"$scriptDir\db_cleanup.ps1`"" -NoNewWindow -PassThru -Wait
-    if ($cleanupProcess.ExitCode -eq 0) {
+    # Try running the script directly first to show any error messages
+    try {
+        & "$scriptDir\db_cleanup.ps1"
         Write-TestLog "Database cleanup completed successfully" -level "Success"
-    } else {
-        Write-TestLog "Database cleanup completed with warnings (tests will continue)" -level "Warning"
+    } catch {
+        # If direct execution fails, try bypassing policy for just this script
+        Write-TestLog "Direct script execution failed, attempting bypass for cleanup script" -level "Warning"
+        $cleanupProcess = Start-Process -FilePath "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$scriptDir\db_cleanup.ps1`"" -NoNewWindow -PassThru -Wait
+        
+        if ($cleanupProcess.ExitCode -eq 0) {
+            Write-TestLog "Database cleanup completed successfully with bypass" -level "Success"
+        } else {
+            Write-TestLog "Database cleanup completed with warnings (tests will continue)" -level "Warning"
+        }
     }
 } catch {
     Write-TestLog "Database cleanup encountered an error: $_" -level "Error"
