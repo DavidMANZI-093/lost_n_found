@@ -1,17 +1,17 @@
 
-2025-05-12 15:43:07 [STEP] - =====================================
-2025-05-12 15:43:07 [STEP] - STARTING LOST & FOUND USER JOURNEY TEST
-2025-05-12 15:43:07 [STEP] - =====================================
-2025-05-12 15:43:07 [STEP] - STEP 1: REGISTER NEW USER (justesseciza5778@mymail.com)
-2025-05-12 15:43:08 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register User
-2025-05-12 15:43:08 [INFO] - Request Body: {
+2025-05-12 15:45:47 [STEP] - =====================================
+2025-05-12 15:45:48 [STEP] - STARTING LOST & FOUND USER JOURNEY TEST
+2025-05-12 15:45:48 [STEP] - =====================================
+2025-05-12 15:45:48 [STEP] - STEP 1: REGISTER NEW USER (justesseciza7435@mymail.com)
+2025-05-12 15:45:48 [STEP] - REQUESTING: [POST] http://localhost:8080/api/v1/auth/signup - Register User
+2025-05-12 15:45:48 [INFO] - Request Body: {
   "phoneNumber": "0799886644",
   "password": "SecurePass123!",
-  "email": "justesseciza5778@mymail.com",
+  "email": "justesseciza7435@mymail.com",
   "lastName": "Justesse",
   "firstName": "KASOGA",
   "address": "UNILAK, KK 508 St, Kigali"
 }
-2025-05-12 15:43:12 [ERROR] - Error: No connection could be made because the target machine actively refused it.
-2025-05-12 15:43:12 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
-2025-05-12 15:43:12 [ERROR] - Failed to register user, aborting tests
+2025-05-12 15:45:52 [ERROR] - Error: No connection could be made because the target machine actively refused it.
+2025-05-12 15:45:52 [ERROR] - Error Detail: No connection could be made because the target machine actively refused it.
+2025-05-12 15:45:52 [ERROR] - Failed to register user, aborting tests
