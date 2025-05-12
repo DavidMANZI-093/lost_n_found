@@ -113,9 +113,9 @@ Log-Message "STEP 1: REGISTER NEW USER ($userEmail)" -level "STEP"
 $registerBody = @{
     email = $userEmail
     password = "SecurePass123!"
-    firstName = "John"
-    lastName = "Doe"
-    phoneNumber = "1234567890"
+    firstName = "KASOGA"
+    lastName = "Justesse"
+    phoneNumber = "0799886644"
     address = "123 University Avenue"
 }
 
