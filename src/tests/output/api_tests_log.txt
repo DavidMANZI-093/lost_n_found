@@ -1,58 +1,16 @@
 
-2025-05-12 16:08:28 - === Starting Lost and Found API Tests ===
-2025-05-12 16:08:28 - Base URL: http://localhost:8080
-2025-05-12 16:08:28 - === Test 1: User Registration ===
-2025-05-12 16:08:28 - Testing: [POST] http://localhost:8080/api/v1/auth/signup - User Registration
-2025-05-12 16:08:28 - Request Body: {
-  "email": "david.test@example.com",
-  "phoneNumber": "0798986565",
-  "address": "Kigali, Rwanda",
-  "firstName": "David",
-  "password": "DavidPass123!",
-  "lastName": "MANZI"
+2025-05-12 16:11:03 - === Starting Lost and Found API Tests ===
+2025-05-12 16:11:03 - Base URL: http://localhost:8080
+2025-05-12 16:11:03 - === Test 1: API Health Check ===
+2025-05-12 16:11:03 - Testing: [GET] http://localhost:8080/api/ - API Health Check
+2025-05-12 16:11:03 - Error: 
+{
+  "status": 401,
+  "error": "Full authentication is required to access this resource"
 }
-2025-05-12 16:08:28 - Response: {
-  "status": 201,
-  "message": "User registered successfully",
-  "data": {
-    "id": 2,
-    "email": "david.test@example.com",
-    "password": "$2a$10$pimaG.3mzaH2g88bQoWLY.MyRo2.fwVyu.K2.wR0eiYtGAN31.ysa",
-    "firstName": "David",
-    "lastName": "MANZI",
-    "phoneNumber": "0798986565",
-    "address": "Kigali, Rwanda",
-    "createdAt": "2025-05-12T16:08:28.585+02:00",
-    "updatedAt": "2025-05-12T16:08:28.585+02:00",
-    "banned": false,
-    "admin": false
-  }
+2025-05-12 16:11:03 - Error Detail: 
+{
+  "status": 401,
+  "error": "Full authentication is required to access this resource"
 }
-2025-05-12 16:08:28 - User registered successfully
-2025-05-12 16:08:28 - === Test 2: User Login ===
-2025-05-12 16:08:28 - Testing: [POST] http://localhost:8080/api/v1/auth/signin - User Login
-2025-05-12 16:08:28 - Request Body: {
-  "email": "david.test@example.com",
-  "password": "DavidPass123!"
-}
-2025-05-12 16:08:28 - Response: {
-  "status": 200,
-  "message": "Authentication successful",
-  "data": {
-    "user": {
-      "id": 2,
-      "email": "david.test@example.com",
-      "password": "$2a$10$pimaG.3mzaH2g88bQoWLY.MyRo2.fwVyu.K2.wR0eiYtGAN31.ysa",
-      "firstName": "David",
-      "lastName": "MANZI",
-      "phoneNumber": "0798986565",
-      "address": "Kigali, Rwanda",
-      "createdAt": "2025-05-12T16:08:28.585+02:00",
-      "updatedAt": "2025-05-12T16:08:28.585+02:00",
-      "banned": false,
-      "admin": false
-    },
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoyLCJlbWFpbCI6ImRhdmlkLnRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiJkYXZpZC50ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3MDU4OTA4LCJleHAiOjE3NDcxNDUzMDh9.beR0e3fjNqJRbM_dDSiMzdUC1P5FO_b2H0M67ZytnCQ"
-  }
-}
-2025-05-12 16:08:28 - Failed to obtain authentication token, stopping tests
+2025-05-12 16:11:03 - API is not responding, stopping tests

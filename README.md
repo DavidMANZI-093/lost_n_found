@@ -477,18 +477,14 @@ The application includes comprehensive PowerShell test scripts located in the `s
 3. **admin_tests.ps1**: Tests admin-specific functionality
 4. **run_all_tests.ps1**: Master script to run all tests and generate a summary
 
-To run all tests, ensure the Spring Boot application is running first, then execute:
+To run all tests:
 
 ```powershell
-# From the project root directory
-.\src\tests\run_all_tests.ps1
+cd src/tests
+./run_all_tests.ps1
 ```
 
-**Important Notes:**
-- The application must be running for tests to succeed
-- Test results and logs are stored in the `output` directory in the project root
-- Each test will automatically exit with an error code if it fails (e.g., if the API is not responding)
-- The summary report shows the status of all tests with timing information
+Test results and logs are stored in the `src/tests/output` directory.
 
 ## Security
 
