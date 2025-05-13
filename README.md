@@ -4,7 +4,7 @@ A RESTful API for managing lost and found items, built with Spring Boot and Post
 
 ## Author
 - Name: KASOGA Justesse
-- Registration Number: 11471/2024
+- Registration Number: 11471/2017
 
 ## Features
 
@@ -29,7 +29,6 @@ A RESTful API for managing lost and found items, built with Spring Boot and Post
   - [Found Items](#found-items)
   - [Search](#search)
   - [Admin Features](#admin-features)
-- [Testing](#testing)
 - [Security](#security)
 - [License](#license)
 
@@ -85,12 +84,6 @@ Project Root/
 │   │   ├── LostItemService.java
 │   │   ├── FoundItemService.java
 │   │   └── AdminService.java
-│   ├── tests/                # Test scripts
-│   │   ├── output/           # Test output logs
-│   │   ├── api_tests.ps1     # General API tests
-│   │   ├── user_journey_tests.ps1 # User flow tests
-│   │   ├── admin_tests.ps1   # Admin feature tests
-│   │   └── run_all_tests.ps1 # Master test runner
 │   ├── utils/                # Utility classes
 │   │   ├── JwtUtils.java
 │   │   ├── UserDetailsImpl.java
@@ -467,24 +460,6 @@ Response:
   }
 }
 ```
-
-## Testing
-
-The application includes comprehensive PowerShell test scripts located in the `src/tests` directory:
-
-1. **api_tests.ps1**: Tests all basic API endpoints
-2. **user_journey_tests.ps1**: Simulates a complete user flow
-3. **admin_tests.ps1**: Tests admin-specific functionality
-4. **run_all_tests.ps1**: Master script to run all tests and generate a summary
-
-To run all tests:
-
-```powershell
-cd src/tests
-./run_all_tests.ps1
-```
-
-Test results and logs are stored in the `src/tests/output` directory.
 
 ## Security
 
