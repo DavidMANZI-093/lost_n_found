@@ -2,10 +2,6 @@
 
 A RESTful API for managing lost and found items, built with Spring Boot and PostgreSQL.
 
-## Author
-- Name: KASOGA Justesse
-- Registration Number: 11471/2017
-
 ## Features
 
 - User authentication with JWT
