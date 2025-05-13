@@ -29,7 +29,7 @@ public class LostItemController {
     private LostItemService lostItemService;
 
     /**
-     * Create a new lost item
+     * Creates a new lost item
      * 
      * @param lostItem the lost item to create
      * @param authHeader the authorization header with JWT token
@@ -51,7 +51,7 @@ public class LostItemController {
     }
 
     /**
-     * Get a lost item by ID
+     * Gets a lost item by ID
      * 
      * @param id the ID of the lost item
      * @return ResponseEntity with API response
@@ -69,7 +69,7 @@ public class LostItemController {
     }
 
     /**
-     * Update a lost item
+     * Updates a lost item
      * 
      * @param id the ID of the lost item to update
      * @param lostItemDetails the updated lost item details
@@ -97,7 +97,7 @@ public class LostItemController {
     }
 
     /**
-     * Delete a lost item
+     * Deletes a lost item
      * 
      * @param id the ID of the lost item to delete
      * @param authHeader the authorization header with JWT token

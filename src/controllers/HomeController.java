@@ -21,7 +21,7 @@ import java.util.Map;
 public class HomeController {
 
     /**
-     * Get application information
+     * Gets application information
      * 
      * @return basic application information
      */
@@ -36,7 +36,7 @@ public class HomeController {
     }
     
     /**
-     * Get API version information
+     * Gets API version information
      * 
      * @return API version information
      */

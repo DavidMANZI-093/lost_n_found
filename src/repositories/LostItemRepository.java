@@ -19,7 +19,7 @@ import java.util.List;
 public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     
     /**
-     * Find all lost items by user
+     * Finds all lost items by user
      * 
      * @param user the user who created the lost items
      * @return List of lost items
@@ -27,7 +27,7 @@ public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     List<LostItem> findByUser(User user);
     
     /**
-     * Find all lost items by status
+     * Finds all lost items by status
      * 
      * @param status the status to filter by
      * @return List of lost items with the specified status
@@ -35,7 +35,7 @@ public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     List<LostItem> findByStatus(String status);
     
     /**
-     * Find all lost items by location containing the given string (case insensitive)
+     * Finds all lost items by location containing the given string (case insensitive)
      * 
      * @param location the location substring to search for
      * @return List of lost items matching the location
@@ -43,7 +43,7 @@ public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     List<LostItem> findByLocationContainingIgnoreCase(String location);
     
     /**
-     * Find all lost items by category
+     * Finds all lost items by category
      * 
      * @param category the category to filter by
      * @return List of lost items with the specified category
@@ -51,7 +51,7 @@ public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     List<LostItem> findByCategory(String category);
     
     /**
-     * Find all lost items by title or description containing the given string (case insensitive)
+     * Finds all lost items by title or description containing the given string (case insensitive)
      * 
      * @param keyword the keyword to search for in title or description
      * @return List of lost items matching the keyword
@@ -60,7 +60,7 @@ public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     List<LostItem> searchByKeyword(@Param("keyword") String keyword);
     
     /**
-     * Find all lost items by date range
+     * Finds all lost items by date range
      * 
      * @param startDate the start date of the range
      * @param endDate the end date of the range
@@ -69,7 +69,7 @@ public interface LostItemRepository extends JpaRepository<LostItem, Long> {
     List<LostItem> findByLostDateBetween(Date startDate, Date endDate);
     
     /**
-     * Count lost items by status
+     * Counts lost items by status
      * 
      * @param status the status to count
      * @return count of lost items with the specified status

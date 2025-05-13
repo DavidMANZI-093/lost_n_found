@@ -24,7 +24,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     /**
-     * Handle ResourceNotFoundException
+     * Handles ResourceNotFoundException
      */
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ApiResponse<Object>> handleResourceNotFoundException(
@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle validation errors
+     * Handles validation errors
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponse<Map<String, String>>> handleValidationExceptions(
@@ -50,7 +50,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle authentication errors
+     * Handles authentication errors
      */
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<ApiResponse<Object>> handleBadCredentialsException(
@@ -60,7 +60,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle access denied errors
+     * Handles access denied errors
      */
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ApiResponse<Object>> handleAccessDeniedException(
@@ -70,7 +70,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle illegal argument exceptions
+     * Handles illegal argument exceptions
      */
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiResponse<Object>> handleIllegalArgumentException(
@@ -80,7 +80,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle general exceptions
+     * Handles general exceptions
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Object>> handleGlobalException(

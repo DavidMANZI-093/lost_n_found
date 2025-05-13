@@ -26,7 +26,7 @@ public class AdminController {
     private AdminService adminService;
 
     /**
-     * Update user ban status
+     * Updates user ban status
      * 
      * @param id the ID of the user to update
      * @param requestBody map containing isBanned boolean
@@ -53,7 +53,7 @@ public class AdminController {
     }
 
     /**
-     * Update item status (approve/reject)
+     * Updates item status (approve/reject)
      * 
      * @param id the ID of the item
      * @param requestBody map containing status and type strings
@@ -88,7 +88,7 @@ public class AdminController {
     }
 
     /**
-     * Get system reports
+     * Gets system reports
      * 
      * @return ResponseEntity with API response
      */

@@ -31,7 +31,7 @@ public class FoundItemService {
     private JwtUtils jwtUtils;
 
     /**
-     * Create a new found item
+     * Creates a new found item
      * 
      * @param foundItem the found item to create
      * @param token the JWT token
@@ -50,7 +50,7 @@ public class FoundItemService {
     }
 
     /**
-     * Get all found items
+     * Gets all found items
      * 
      * @return list of all found items
      */
@@ -59,7 +59,7 @@ public class FoundItemService {
     }
 
     /**
-     * Get found item by ID
+     * Gets a found item by ID
      * 
      * @param id the ID of the found item
      * @return the found item
@@ -70,7 +70,7 @@ public class FoundItemService {
     }
 
     /**
-     * Update a found item
+     * Updates a found item
      * 
      * @param id the ID of the found item to update
      * @param foundItemDetails the updated found item details
@@ -128,7 +128,7 @@ public class FoundItemService {
     }
 
     /**
-     * Delete a found item
+     * Deletes a found item
      * 
      * @param id the ID of the found item to delete
      * @param token the JWT token
@@ -149,7 +149,7 @@ public class FoundItemService {
     }
 
     /**
-     * Search found items
+     * Searches for found items
      * 
      * @param keyword the keyword to search for
      * @param location the location to search in
@@ -177,9 +177,6 @@ public class FoundItemService {
         if (keyword == null && location == null && startDate != null && endDate != null) {
             return foundItemRepository.findByFoundDateBetween(startDate, endDate);
         }
-        
-        // For more complex searches, you might need to implement a custom repository method
-        // or use criteria API for dynamic queries
         
         // Fallback to returning all active found items
         return foundItemRepository.findByStatus("active");

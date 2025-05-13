@@ -19,7 +19,7 @@ import java.util.List;
 public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {
     
     /**
-     * Find all found items by user
+     * Finds all found items by user
      * 
      * @param user the user who created the found items
      * @return List of found items
@@ -27,7 +27,7 @@ public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {
     List<FoundItem> findByUser(User user);
     
     /**
-     * Find all found items by status
+     * Finds all found items by status
      * 
      * @param status the status to filter by
      * @return List of found items with the specified status
@@ -35,7 +35,7 @@ public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {
     List<FoundItem> findByStatus(String status);
     
     /**
-     * Find all found items by location containing the given string (case insensitive)
+     * Finds all found items by location containing the given string (case insensitive)
      * 
      * @param location the location substring to search for
      * @return List of found items matching the location
@@ -43,7 +43,7 @@ public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {
     List<FoundItem> findByLocationContainingIgnoreCase(String location);
     
     /**
-     * Find all found items by category
+     * Finds all found items by category
      * 
      * @param category the category to filter by
      * @return List of found items with the specified category
@@ -51,7 +51,7 @@ public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {
     List<FoundItem> findByCategory(String category);
     
     /**
-     * Find all found items by title or description containing the given string (case insensitive)
+     * Finds all found items by title or description containing the given string (case insensitive)
      * 
      * @param keyword the keyword to search for in title or description
      * @return List of found items matching the keyword
@@ -60,7 +60,7 @@ public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {
     List<FoundItem> searchByKeyword(@Param("keyword") String keyword);
     
     /**
-     * Find all found items by date range
+     * Finds all found items by date range
      * 
      * @param startDate the start date of the range
      * @param endDate the end date of the range

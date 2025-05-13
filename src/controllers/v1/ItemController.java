@@ -30,7 +30,7 @@ public class ItemController {
     private FoundItemService foundItemService;
 
     /**
-     * Get all items (both lost and found)
+     * Gets all items (both lost and found)
      * 
      * @param type optional filter by type (lost/found)
      * @return ResponseEntity with API response
@@ -71,7 +71,7 @@ public class ItemController {
     }
 
     /**
-     * Get statistics about items
+     * Gets statistics about items
      * 
      * @return ResponseEntity with API response
      */

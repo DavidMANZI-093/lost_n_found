@@ -30,7 +30,7 @@ public class AuthController {
     private AuthService authService;
 
     /**
-     * Register a new user
+     * Registers a new user
      * 
      * @param request the signup request
      * @return ResponseEntity with API response
@@ -48,7 +48,7 @@ public class AuthController {
     }
 
     /**
-     * Authenticate user and generate JWT token
+     * Authenticates user and generates JWT token
      * 
      * @param request the login request
      * @return ResponseEntity with API response

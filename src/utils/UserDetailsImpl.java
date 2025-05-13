@@ -30,7 +30,7 @@ public class UserDetailsImpl implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     /**
-     * Build UserDetailsImpl from User entity
+     * Builds UserDetailsImpl from User entity
      * 
      * @param user the user entity
      * @return UserDetailsImpl instance

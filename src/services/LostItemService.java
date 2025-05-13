@@ -31,7 +31,7 @@ public class LostItemService {
     private JwtUtils jwtUtils;
 
     /**
-     * Create a new lost item
+     * Creates a new lost item
      * 
      * @param lostItem the lost item to create
      * @param token the JWT token
@@ -50,7 +50,7 @@ public class LostItemService {
     }
 
     /**
-     * Get all lost items
+     * Gets all lost items
      * 
      * @return list of all lost items
      */
@@ -59,7 +59,7 @@ public class LostItemService {
     }
 
     /**
-     * Get lost item by ID
+     * Gets a lost item by ID
      * 
      * @param id the ID of the lost item
      * @return the lost item
@@ -70,7 +70,7 @@ public class LostItemService {
     }
 
     /**
-     * Update a lost item
+     * Updates a lost item
      * 
      * @param id the ID of the lost item to update
      * @param lostItemDetails the updated lost item details
@@ -124,7 +124,7 @@ public class LostItemService {
     }
 
     /**
-     * Delete a lost item
+     * Deletes a lost item
      * 
      * @param id the ID of the lost item to delete
      * @param token the JWT token
@@ -145,7 +145,7 @@ public class LostItemService {
     }
 
     /**
-     * Search lost items
+     * Searches for lost items
      * 
      * @param keyword the keyword to search for
      * @param location the location to search in
@@ -173,9 +173,6 @@ public class LostItemService {
         if (keyword == null && location == null && startDate != null && endDate != null) {
             return lostItemRepository.findByLostDateBetween(startDate, endDate);
         }
-        
-        // For more complex searches, you might need to implement a custom repository method
-        // or use criteria API for dynamic queries
         
         // Fallback to returning all active lost items
         return lostItemRepository.findByStatus("active");

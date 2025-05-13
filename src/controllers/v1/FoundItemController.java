@@ -29,7 +29,7 @@ public class FoundItemController {
     private FoundItemService foundItemService;
 
     /**
-     * Create a new found item
+     * Creates a new found item
      * 
      * @param foundItem the found item to create
      * @param authHeader the authorization header with JWT token
@@ -51,7 +51,7 @@ public class FoundItemController {
     }
 
     /**
-     * Get a found item by ID
+     * Gets a found item by ID
      * 
      * @param id the ID of the found item
      * @return ResponseEntity with API response
@@ -69,7 +69,7 @@ public class FoundItemController {
     }
 
     /**
-     * Update a found item
+     * Updates a found item
      * 
      * @param id the ID of the found item to update
      * @param foundItemDetails the updated found item details
@@ -97,7 +97,7 @@ public class FoundItemController {
     }
 
     /**
-     * Delete a found item
+     * Deletes a found item
      * 
      * @param id the ID of the found item to delete
      * @param authHeader the authorization header with JWT token

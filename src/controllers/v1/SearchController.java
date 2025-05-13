@@ -34,7 +34,7 @@ public class SearchController {
     private FoundItemService foundItemService;
 
     /**
-     * Search for lost or found items based on criteria
+     * Searches for lost or found items based on criteria
      * 
      * @param type the type of items to search (lost/found)
      * @param keyword keyword to search in title or description

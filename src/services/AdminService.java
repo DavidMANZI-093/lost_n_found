@@ -30,7 +30,7 @@ public class AdminService {
     private FoundItemRepository foundItemRepository;
 
     /**
-     * Update user ban status
+     * Updates user ban status
      * 
      * @param userId the ID of the user to update
      * @param isBanned the new ban status
@@ -45,7 +45,7 @@ public class AdminService {
     }
 
     /**
-     * Update item status (approve/reject)
+     * Updates item status (approve/reject)
      * 
      * @param itemId the ID of the item
      * @param status the new status
@@ -77,7 +77,7 @@ public class AdminService {
     }
 
     /**
-     * Get system reports
+     * Gets system reports
      * 
      * @return map of system statistics
      */

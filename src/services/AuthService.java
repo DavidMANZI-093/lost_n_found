@@ -40,18 +40,18 @@ public class AuthService {
     private JwtUtils jwtUtils;
 
     /**
-     * Register a new user
+     * Registers a new user
      * 
      * @param request the signup request
      * @return the created user
      */
     public User registerUser(SignupRequest request) {
-        // Check if email already exists
+        // Checks if email already exists
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new IllegalArgumentException("Email is already in use");
         }
 
-        // Create new user
+        // Creates new user
         User user = new User();
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
@@ -68,7 +68,7 @@ public class AuthService {
     }
 
     /**
-     * Authenticate user and generate JWT token
+     * Authenticates a user and generates a JWT token
      * 
      * @param request the login request
      * @return map containing JWT token and user details

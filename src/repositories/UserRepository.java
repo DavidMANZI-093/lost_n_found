@@ -15,7 +15,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     
     /**
-     * Find a user by email
+     * Finds a user by email
      * 
      * @param email the email to search for
      * @return Optional containing the user if found
@@ -23,7 +23,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     
     /**
-     * Check if a user exists with the given email
+     * Checks if a user exists with the given email
      * 
      * @param email the email to check
      * @return true if a user exists with the email
@@ -31,14 +31,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
     boolean existsByEmail(String email);
     
     /**
-     * Count active users (not banned)
+     * Counts active users (not banned)
      * 
      * @return count of active users
      */
     long countByIsBannedFalse();
     
     /**
-     * Count banned users
+     * Counts banned users
      * 
      * @return count of banned users
      */

@@ -35,7 +35,7 @@ public class JwtUtils {
     private int jwtExpirationMs;
 
     /**
-     * Generate JWT token for authenticated user
+     * Generates a JWT token for authenticated user
      *
      * @param authentication the authentication object
      * @return the JWT token
@@ -62,7 +62,7 @@ public class JwtUtils {
     }
 
     /**
-     * Get username from JWT token
+     * Gets the username from JWT token
      *
      * @param token the JWT token
      * @return the username
@@ -77,7 +77,7 @@ public class JwtUtils {
     }
     
     /**
-     * Get user ID from JWT token
+     * Gets the user ID from JWT token
      *
      * @param token the JWT token
      * @return the user ID
@@ -92,7 +92,7 @@ public class JwtUtils {
     }
     
     /**
-     * Check if user is admin from JWT token
+     * Checks if user is admin from JWT token
      *
      * @param token the JWT token
      * @return true if user is admin
@@ -107,7 +107,7 @@ public class JwtUtils {
     }
 
     /**
-     * Validate JWT token
+     * Validates a JWT token
      *
      * @param authToken the JWT token
      * @return true if token is valid
