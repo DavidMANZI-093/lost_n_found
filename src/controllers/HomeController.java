@@ -13,8 +13,6 @@ import java.util.Map;
  * Home controller for the Lost and Found application
  * Provides basic application information and API documentation
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @RestController
 @RequestMapping("/api")

@@ -19,8 +19,6 @@ import java.util.Map;
 /**
  * Authentication controller for signup and signin endpoints
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @RestController
 @RequestMapping("/api/v1/auth")

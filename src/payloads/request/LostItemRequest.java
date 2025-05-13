@@ -10,8 +10,6 @@ import java.util.Date;
 /**
  * Request payload for lost item operations
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Data
 public class LostItemRequest {

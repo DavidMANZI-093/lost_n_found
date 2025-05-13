@@ -8,8 +8,6 @@ import java.util.Optional;
 /**
  * Repository interface for User entity
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

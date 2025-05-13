@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 /**
  * Generic API response class
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Data
 @NoArgsConstructor

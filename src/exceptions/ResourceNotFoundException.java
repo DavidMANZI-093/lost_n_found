@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * Exception thrown when a requested resource is not found
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {

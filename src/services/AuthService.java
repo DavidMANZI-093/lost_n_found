@@ -21,8 +21,6 @@ import java.util.Map;
 /**
  * Authentication Service for the Lost and Found application
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Service
 public class AuthService {

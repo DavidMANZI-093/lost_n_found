@@ -21,8 +21,6 @@ import java.io.IOException;
 /**
  * JWT Authentication Filter to validate JWT tokens in requests
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);

@@ -14,8 +14,6 @@ import java.util.Map;
 /**
  * Service for admin operations
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Service
 public class AdminService {

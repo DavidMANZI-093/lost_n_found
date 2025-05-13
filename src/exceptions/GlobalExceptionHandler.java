@@ -17,8 +17,6 @@ import java.util.Map;
 /**
  * Global exception handler for the application
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

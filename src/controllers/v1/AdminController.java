@@ -14,8 +14,6 @@ import java.util.Map;
 /**
  * Controller for admin operations
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @RestController
 @RequestMapping("/api/v1/admin")

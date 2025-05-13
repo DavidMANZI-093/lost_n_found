@@ -8,8 +8,6 @@ import lombok.Data;
 /**
  * Signup request payload class
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Data
 public class SignupRequest {

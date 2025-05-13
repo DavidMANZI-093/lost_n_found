@@ -12,8 +12,6 @@ import java.util.List;
 /**
  * Repository interface for LostItem entity
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Repository
 public interface LostItemRepository extends JpaRepository<LostItem, Long> {

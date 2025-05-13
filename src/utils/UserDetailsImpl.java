@@ -14,8 +14,6 @@ import java.util.List;
 /**
  * UserDetailsImpl implements Spring Security's UserDetails interface
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Data
 @AllArgsConstructor

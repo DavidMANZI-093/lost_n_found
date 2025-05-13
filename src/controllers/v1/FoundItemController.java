@@ -18,8 +18,6 @@ import java.util.Map;
 /**
  * Controller for managing found items
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @RestController
 @RequestMapping("/api/v1/found-items")

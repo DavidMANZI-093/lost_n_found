@@ -19,8 +19,6 @@ import utils.UserDetailsServiceImpl;
 /**
  * Spring Security Configuration
  * 
- * @author KASOGA Justesse
- * @reg 11471/2017
  */
 @Configuration
 @EnableWebSecurity
