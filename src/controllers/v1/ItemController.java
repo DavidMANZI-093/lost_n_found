@@ -17,7 +17,7 @@ import java.util.Map;
  * Controller for managing both lost and found items
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @RestController
 @RequestMapping("/api/v1/items")

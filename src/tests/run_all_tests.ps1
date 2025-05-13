@@ -1,6 +1,6 @@
 # Lost and Found API Master Test Runner
 # Author: KASOGA Justesse
-# Reg: 11471/2024
+# Reg: 11471/2017
 
 # Set up variables
 $logDir = ".\output"

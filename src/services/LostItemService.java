@@ -16,7 +16,7 @@ import java.util.List;
  * Service for managing lost items
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Service
 public class LostItemService {

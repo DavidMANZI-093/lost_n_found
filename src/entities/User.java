@@ -17,7 +17,7 @@ import java.util.Date;
  * User entity for the Lost and Found application
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Entity
 @Table(name = "users")

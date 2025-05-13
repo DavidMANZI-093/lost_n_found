@@ -12,7 +12,7 @@ import repositories.UserRepository;
  * UserDetailsServiceImpl implements Spring Security's UserDetailsService interface
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

@@ -14,7 +14,7 @@ import java.util.Map;
  * Provides basic application information and API documentation
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @RestController
 @RequestMapping("/api")

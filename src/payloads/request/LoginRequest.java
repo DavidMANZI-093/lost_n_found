@@ -8,7 +8,7 @@ import lombok.Data;
  * Login request payload class
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Data
 public class LoginRequest {

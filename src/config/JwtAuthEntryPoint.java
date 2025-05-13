@@ -14,7 +14,7 @@ import java.io.IOException;
  * JWT Authentication Entry Point to handle unauthorized requests
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Component
 public class JwtAuthEntryPoint implements AuthenticationEntryPoint {

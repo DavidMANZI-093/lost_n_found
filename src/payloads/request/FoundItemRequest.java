@@ -11,7 +11,7 @@ import java.util.Date;
  * Request payload for found item operations
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Data
 public class FoundItemRequest {

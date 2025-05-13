@@ -13,7 +13,7 @@ import java.util.List;
  * Repository interface for FoundItem entity
  * 
  * @author KASOGA Justesse
- * @reg 11471/2024
+ * @reg 11471/2017
  */
 @Repository
 public interface FoundItemRepository extends JpaRepository<FoundItem, Long> {

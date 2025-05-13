@@ -1,6 +1,0 @@
-
-❌ FAILED: [GET] http://localhost:8080/api/ - API Health Check - 
-{
-  "status": 401,
-  "error": "Full authentication is required to access this resource"
-}

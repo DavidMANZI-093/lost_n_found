@@ -1,6 +1,6 @@
 # Lost and Found API Admin Functionality Test Script
 # Author: KASOGA Justesse
-# Reg: 11471/2024
+# Reg: 11471/2017
 
 # Set up test variables
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
