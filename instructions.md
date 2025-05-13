@@ -19,18 +19,17 @@
 **Instructions:**
 ⚠ **Important tips:**
 
-```
-● Missing the following class design requirements will result in a -1 mark penalty per
+## Missing the following class design requirements will result in a -1 mark penalty per
 omission.
-● Plagiarism: 0 marks
-● Late submission: Even 1 minute late = 0 marks
-● JavaDoc or comment annotations in each class indicating your name and registration
+- Plagiarism: 0 marks
+- Late submission: Even 1 minute late = 0 marks
+- JavaDoc or comment annotations in each class indicating your name and registration
 number
-● Class names must be in Capital letters
-● Version your API and use meaningful resource names
-● Use the appropriate HTTP method and status
-● Submit as a zipped project in my DM on Slack
-```
+- Class names must be in Capital letters
+- Version your API and use meaningful resource names
+- Use the appropriate HTTP method and status
+- Submit as a zipped project in my DM on Slack
+
 As you embark on developing RESTful APIs using Spring Boot, please adhere to the following
 guidelines to ensure your project is well-structured, secure, and aligns with best practices:
 
