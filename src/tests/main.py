@@ -7,9 +7,9 @@ from tqdm import tqdm
 import pyfiglet
 from datetime import datetime
 
-from db_manager import DatabaseManager
-from api_client import APIClient
-from test_reporter import TestReporter
+from .db_manager import DatabaseManager
+from .api_client import APIClient
+from .test_reporter import TestReporter
 
 # Initialize colorama
 init(autoreset=True)
