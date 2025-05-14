@@ -17,7 +17,15 @@ def __main__(self):
     self.cursor.execute("SELECT * FROM lost_n_found.user WHERE email = 'adminlostnfound@gmail.com SET is_admin = true'")
     
     requests.post(
-        f"{self.base}"
+        f"{self.base_url}/auth/signup",
+        json={
+            "email": "johndoe@gmail.com",
+            "password": "john123",
+            "firstName": "John",
+            "lastName": "Doe",
+            "phoneNumber": "0792222222",
+            "address": "KK 38 Ave, Kigali"
+        }
     )
 
     Cleaner(self.cursor)
