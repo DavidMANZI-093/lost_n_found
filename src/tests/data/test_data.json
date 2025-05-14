@@ -1,0 +1,69 @@
+{
+    "lost_items": [
+      {
+        "title": "Lost Wallet",
+        "description": "Lost wallet with some cash and some cards",
+        "category": "Wallet",
+        "location": "UNILAK, Central Park",
+        "imageUrl": "https://dummywallet.com/image.jpg",
+        "lostDate": "2025-05-13T15:30:00Z"
+      },
+      {
+        "title": "Lost Card",
+        "description": "Lost student card with reg no 11471/2025",
+        "category": "Card",
+        "location": "UNILAK, Administrative Building",
+        "imageUrl": "https://dummycard.com/image.jpg",
+        "lostDate": "2025-05-11T13:00:00Z"
+      },
+      {
+        "title": "Lost Book",
+        "description": "Lost book with title 'The Great Gatsby'",
+        "category": "Book",
+        "location": "UNILAK, Library",
+        "imageUrl": "https://dummybook.com/image.jpg",
+        "lostDate": "2025-05-11T13:00:00Z"
+      }
+    ],
+    "lost_item_updates": [
+      {
+        "id": 2,
+        "title": "Lost Card - Updated",
+        "description": "(Updated) Lost student card with reg no 11471/2017",
+        "category": "Card",
+        "location": "UNILAK, Administrative Building",
+        "imageUrl": "https://dummycard.com/image.jpg",
+        "lostDate": "2025-05-11T13:00:00Z"
+      }
+    ],
+    "found_items": [
+      {
+        "title": "Found Phone",
+        "description": "iPhone 13, black case",
+        "category": "Electronics",
+        "location": "UNILAK, Coffee House",
+        "imageUrl": "https://dummyphone.com/image.jpg",
+        "foundDate": "2025-05-14T12:00:00Z"
+      }
+    ],
+    "found_item_updates": [
+      {
+        "id": 1,
+        "title": "Found Phone - Updated",
+        "description": "(Updated) iPhone 13, red case",
+        "category": "Electronics",
+        "location": "UNILAK, Coffee House",
+        "imageUrl": "https://dummyphone.com/image.jpg",
+        "foundDate": "2025-05-14T12:00:00Z"
+      }
+    ],
+    "search_queries": [
+      {
+        "type": "lost",
+        "category": "Card",
+        "keyword": "wallet",
+        "location": "coffee",
+        "status": "pending"
+      }
+    ]
+  }

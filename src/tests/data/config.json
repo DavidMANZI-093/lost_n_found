@@ -1,0 +1,28 @@
+{
+    "base_url": "http://localhost:8080/api/v1",
+    "db_config": {
+      "db_name": "lost_n_found",
+      "user": "postgres",
+      "password": "post093",
+      "host": "localhost",
+      "port": "5432"
+    },
+    "users": {
+      "admin": {
+        "email": "adminlostnfound@gmail.com",
+        "password": "admin123",
+        "firstName": "CIZA",
+        "lastName": "Justesse",
+        "phoneNumber": "0791111111",
+        "address": "KK 508 St, Kigali"
+      },
+      "regular": {
+        "email": "johndoe@gmail.com",
+        "password": "john123",
+        "firstName": "John",
+        "lastName": "Doe",
+        "phoneNumber": "0792222222",
+        "address": "KK 38 Ave, Kigali"
+      }
+    }
+  }
