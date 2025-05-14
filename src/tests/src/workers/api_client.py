@@ -53,7 +53,7 @@ class APIClient:
         elapsed = self._record_response_time(endpoint, "POST", start_time)
         
         if response.status_code == 200:
-            token = response.json().get("token")
+            token = response.json().get("data").get("token")
             if "adminlostnfound@gmail.com" in credentials["email"]:
                 self.admin_token = token
             else:
