@@ -1,4 +1,4 @@
-import py
+import psycopg2
 import json
 
 class DatabaseManager:

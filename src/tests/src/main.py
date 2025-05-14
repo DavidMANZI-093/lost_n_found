@@ -1,6 +1,7 @@
 import json
 from colorama import Fore, Style, init
 import pyfiglet
+import os
 from datetime import datetime
 
 from .utils.db_manager import DatabaseManager
@@ -13,22 +14,25 @@ init(autoreset=True)
 def run_tests():
     """Main function to run all API tests"""
     # Print welcome banner
+
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+
     title = pyfiglet.figlet_format("Lost & Found API Tests", font="slant", width=100)
     print(f"{Fore.CYAN}{title}{Style.RESET_ALL}")
     print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}")
     print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"Running tests against API at: {load_config()['base_url']}")
+    print(f"Running tests against API at: {load_config(root_dir)['base_url']}")
     print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}\n")
     
     # Initialize components
-    db_manager = DatabaseManager()
-    api_client = APIClient()
+    db_manager = DatabaseManager(f"{root_dir}/info/config.json")
+    api_client = APIClient(f"{root_dir}/info/config.json")
     reporter = TestReporter()
     
     try:
         # Load test data
-        test_data = load_test_data()
-        config = load_config()
+        test_data = load_test_data(root_dir)
+        config = load_config(root_dir)
         
         # Connect to database
         print(f"{Fore.YELLOW}Connecting to database...{Style.RESET_ALL}")
@@ -64,14 +68,14 @@ def run_tests():
         print(f"{Fore.GREEN}✓ Cleanup complete{Style.RESET_ALL}")
         print(f"\nCompleted: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-def load_config():
+def load_config(root_dir):
     """Load configuration from JSON file"""
-    with open("./info/config.json", "r") as f:
+    with open(f"{root_dir}/info/config.json", "r") as f:
         return json.load(f)
 
-def load_test_data():
+def load_test_data(root_dir):
     """Load test data from JSON file"""
-    with open("./info/test_data.json", "r") as f:
+    with open(f"{root_dir}/info/test_data.json", "r") as f:
         return json.load(f)
 
 def run_authentication_tests(api_client, reporter, config, db_manager):
