@@ -219,7 +219,7 @@ class APIClient:
         
         response = requests.patch(
             f"{self.base_url}{endpoint}",
-            json={"status": status},
+            json={"status": status, "type": "lost"},
             headers={
                 "Authorization": f"Bearer {self.admin_token}",
                 "Content-Type": "application/json"
