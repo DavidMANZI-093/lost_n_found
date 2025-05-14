@@ -61,10 +61,7 @@
     ],
     "search_queries": [
       {
-        "type": "lost",
-        "category": "Card",
-        "keyword": "wallet",
-        "location": "coffee"
+        "type": "lost"
       }
     ]
   }
