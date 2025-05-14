@@ -5,4 +5,4 @@ tqdm==4.66.1
 pytest==7.4.3
 python-dotenv==1.0.0
 pyfiglet==1.0.2
-prettytable==3.9.0
+prettytable
