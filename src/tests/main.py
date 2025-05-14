@@ -14,6 +14,12 @@ def __main__(self):
         }
     )
 
+    self.cursor.execute("SELECT * FROM lost_n_found.user WHERE email = 'adminlostnfound@gmail.com SET is_admin = true'")
+    
+    requests.post(
+        f"{self.base}"
+    )
+
     Cleaner(self.cursor)
 
 if __name__ == "__main__":
