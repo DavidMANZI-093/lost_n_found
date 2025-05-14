@@ -1,15 +1,11 @@
 import json
-import time
-import os
-import sys
 from colorama import Fore, Style, init
-from tqdm import tqdm
 import pyfiglet
 from datetime import datetime
 
-from .db_manager import DatabaseManager
-from .api_client import APIClient
-from .test_reporter import TestReporter
+from .utils.db_manager import DatabaseManager
+from .workers.api_client import APIClient
+from .utils.test_reporter import TestReporter
 
 # Initialize colorama
 init(autoreset=True)
@@ -70,12 +66,12 @@ def run_tests():
 
 def load_config():
     """Load configuration from JSON file"""
-    with open("config.json", "r") as f:
+    with open("info/config.json", "r") as f:
         return json.load(f)
 
 def load_test_data():
     """Load test data from JSON file"""
-    with open("test_data.json", "r") as f:
+    with open("info/test_data.json", "r") as f:
         return json.load(f)
 
 def run_authentication_tests(api_client, reporter, config, db_manager):

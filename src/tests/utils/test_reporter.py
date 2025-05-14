@@ -1,8 +1,6 @@
-import json
 import time
 import sys
 from colorama import Fore, Style, init
-from tqdm import tqdm
 import pyfiglet
 from prettytable import PrettyTable
 

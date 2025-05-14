@@ -4,7 +4,7 @@ import time
 from colorama import Fore, Style
 
 class APIClient:
-    def __init__(self, config_path="config.json"):
+    def __init__(self, config_path="../info/config.json"):
         """Initialize API client with base URL from configuration file"""
         with open(config_path, 'r') as config_file:
             config = json.load(config_file)

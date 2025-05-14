@@ -1,13 +1,12 @@
 import os
-import json
 import argparse
 from tqdm import tqdm
 import time
 from colorama import Fore, Style, init
 import pyfiglet
 
-from .db_manager import DatabaseManager
-from .api_client import APIClient
+from ..utils.db_manager import DatabaseManager
+from ..workers.api_client import APIClient
 
 # Initialize colorama
 init(autoreset=True)

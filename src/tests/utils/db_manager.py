@@ -3,7 +3,7 @@ import json
 import os
 
 class DatabaseManager:
-    def __init__(self, config_path="config.json"):
+    def __init__(self, config_path="../info/config.json"):
         """Initialize database connection manager with configuration from JSON file"""
         with open(config_path, 'r') as config_file:
             config = json.load(config_file)
