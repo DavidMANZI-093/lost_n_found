@@ -43,9 +43,9 @@ class DatabaseManager:
     def clean_database(self):
         """Clean up the database by removing all test data"""
         try:
-            self.cursor.execute("DELETE FROM lost_n_found.lost_items")
-            self.cursor.execute("DELETE FROM lost_n_found.found_items")
-            self.cursor.execute("DELETE FROM lost_n_found.users")
+            self.cursor.execute("TRUNCATE TABLE lost_n_found.lost_items")
+            self.cursor.execute("TRUNCATE TABLE lost_n_found.found_items")
+            self.cursor.execute("TRUNCATE TABLE lost_n_found.users")
             return True
         except Exception as e:
             print(f"❌ Error cleaning database: {e}")
