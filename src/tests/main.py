@@ -96,6 +96,53 @@ def __main__(self):
         }
     )
 
+    response = requests.post(
+        f"{self.base_url}/auth/login",
+        json={
+            "email": "adminlostnfound@gmail.com",
+            "password": "admin123"
+        },
+        headers={
+            "Content-Type": "application/json"
+        }
+    )
+
+    self.admin_token = response.json().get("jwt_token")
+
+    requests.patch(
+        f"{self.base_url}/admin/users/2",
+        json={
+            "is_banned": True
+        },
+        headers={
+            "Authorization": f"Bearer {self.admin_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
+    requests.patch(
+        f"{self.base_url}/admin/users/2",
+        json={
+            "is_banned": False
+        },
+        headers={
+            "Authorization": f"Bearer {self.admin_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
+    requests.patch(
+        f"{self.base_url}/admin/lost-items/1",
+        json={
+            "status": "approved",
+            "type": "lost"
+        },
+        headers={
+            "Authorization": f"Bearer {self.admin_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
     Cleaner(self.cursor)
 
 if __name__ == "__main__":
