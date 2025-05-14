@@ -64,6 +64,38 @@ def __main__(self):
         }
     )
 
+    requests.post(
+        f"{self.base_url}/lost-items",
+        json={
+            "title": "Lost Card",
+            "description": "Lost student card with reg no 11471/2017",
+            "category": "Card",
+            "location": "UNILAK, Administrative Building",
+            "imageUrl": "https://dummycard.com/image.jpg",
+            "lostDate": "2025-05-11T13:00:00Z"
+        },
+        headers={
+            "Authorization": f"Bearer {self.user_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
+    requests.post(
+        f"{self.base_url}/lost-items",
+        json={
+            "title": "Lost Phone",
+            "description": "Lost phone with some cash and some cards",
+            "category": "Phone",
+            "location": "UNILAK, Central Park",
+            "imageUrl": "https://dummyphone.com/image.jpg",
+            "lostDate": "2025-05-12T12:00:00Z"
+        },
+        headers={
+            "Authorization": f"Bearer {self.user_token}",
+            "Content-Type": "application/json"
+        }
+    )
+
     Cleaner(self.cursor)
 
 if __name__ == "__main__":
