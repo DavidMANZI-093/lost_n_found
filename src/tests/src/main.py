@@ -92,13 +92,13 @@ def run_authentication_tests(api_client, reporter, config, db_manager):
     # Set admin privileges
     test_name = "Set Admin Role"
     start_time = reporter.start_test(test_name)
-    success = db_manager.set_admin_role(config["users"]["admin"]["email"])
+    success = db_manager.set_admin_role(config.users.admin.email)
     reporter.end_test(test_name, start_time, success, "Successfully set admin role" if success else "Failed to set admin role")
     
     # Test regular user registration
     test_name = "Register Regular User"
     start_time = reporter.start_test(test_name)
-    response, _ = api_client.register_user(config["users"]["regular"])
+    response, _ = api_client.register_user(config.users.regular)
     success, message = reporter.assert_status_code(response, 201)
     reporter.end_test(test_name, start_time, success, message)
     
@@ -106,8 +106,8 @@ def run_authentication_tests(api_client, reporter, config, db_manager):
     test_name = "Login Regular User"
     start_time = reporter.start_test(test_name)
     credentials = {
-        "email": config["users"]["regular"]["email"],
-        "password": config["users"]["regular"]["password"]
+        "email": config.users.regular.email,
+        "password": config.users.regular.password
     }
     response, _ = api_client.login_user(credentials)
     success, message = reporter.assert_status_code(response, 200)
@@ -119,8 +119,8 @@ def run_authentication_tests(api_client, reporter, config, db_manager):
     test_name = "Login Admin User"
     start_time = reporter.start_test(test_name)
     credentials = {
-        "email": config["users"]["admin"]["email"],
-        "password": config["users"]["admin"]["password"]
+        "email": config.users.admin.email,
+        "password": config.users.admin.password
     }
     response, _ = api_client.login_user(credentials)
     success, message = reporter.assert_status_code(response, 200)
