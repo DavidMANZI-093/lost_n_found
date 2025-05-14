@@ -1,7 +1,7 @@
 requests==2.31.0
 psycopg2-binary==2.9.9
 colorama==0.4.6
-tqdm==4.66.1
+tqdm==4.66.3
 pytest==7.4.3
 python-dotenv==1.0.0
 pyfiglet==1.0.2
