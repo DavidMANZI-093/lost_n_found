@@ -1,4 +1,4 @@
-requests==2.31.0
+requests==2.32.2
 psycopg2-binary==2.9.9
 colorama==0.4.6
 tqdm==4.66.1
