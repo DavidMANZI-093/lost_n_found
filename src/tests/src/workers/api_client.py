@@ -8,7 +8,7 @@ class APIClient:
         """Initialize API client with base URL from configuration file"""
         with open(config_path, 'r') as config_file:
             config = json.load(config_file)
-        
+
         self.base_url = config["base_url"]
         self.admin_token = None
         self.user_token = None
@@ -42,7 +42,7 @@ class APIClient:
     def login_user(self, credentials):
         """Log in a user and store their JWT token"""
         start_time = time.time()
-        endpoint = "/auth/login"
+        endpoint = "/auth/signin"
         
         response = requests.post(
             f"{self.base_url}{endpoint}",
@@ -53,7 +53,7 @@ class APIClient:
         elapsed = self._record_response_time(endpoint, "POST", start_time)
         
         if response.status_code == 200:
-            token = response.json().get("jwt_token")
+            token = response.json().get("token")
             if "adminlostnfound@gmail.com" in credentials["email"]:
                 self.admin_token = token
             else:
