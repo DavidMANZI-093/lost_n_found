@@ -32,7 +32,7 @@ class DatabaseManager:
         """Set admin role for a user with the specified email"""
         try:
             self.cursor.execute(
-                "UPDATE lost_n_found.users SET is_admin = true WHERE email = %s",
+                "UPDATE users SET is_admin = true WHERE email = %s",
                 (email,)
             )
             return True
@@ -43,9 +43,9 @@ class DatabaseManager:
     def clean_database(self):
         """Clean up the database by removing all test data"""
         try:
-            self.cursor.execute("TRUNCATE TABLE lost_n_found.lost_items")
-            self.cursor.execute("TRUNCATE TABLE lost_n_found.found_items")
-            self.cursor.execute("TRUNCATE TABLE lost_n_found.users")
+            self.cursor.execute("TRUNCATE TABLE lost_items CASCADE")
+            self.cursor.execute("TRUNCATE TABLE found_items CASCADE")
+            self.cursor.execute("TRUNCATE TABLE users CASCADE")
             return True
         except Exception as e:
             print(f"❌ Error cleaning database: {e}")
