@@ -18,7 +18,7 @@ def __main__(self):
         }
     )
 
-    self.cursor.execute("SELECT * FROM lost_n_found.user WHERE email = 'adminlostnfound@gmail.com SET is_admin = true'")
+    self.cursor.execute("UPDATE lost_n_found.user SET is_admin = true WHERE email = 'adminlostnfound@gmail.com'")
     
     requests.post(
         f"{self.base_url}/auth/signup",
