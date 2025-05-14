@@ -81,14 +81,14 @@ def __main__(self):
     )
 
     requests.post(
-        f"{self.base_url}/lost-items",
+        f"{self.base_url}/found-items",
         json={
-            "title": "Lost Phone",
-            "description": "Lost phone with some cash and some cards",
-            "category": "Phone",
-            "location": "UNILAK, Central Park",
+            "title": "Found Phone",
+            "description": "iPhone 13, black case",
+            "category": "Electronics",
+            "location": "UNILAK, Coffee House",
             "imageUrl": "https://dummyphone.com/image.jpg",
-            "lostDate": "2025-05-12T12:00:00Z"
+            "foundDate": "2025-05-14T12:00:00Z"
         },
         headers={
             "Authorization": f"Bearer {self.user_token}",
