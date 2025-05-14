@@ -219,14 +219,14 @@ def run_admin_tests(api_client, reporter):
     # Update item status (lost)
     test_name = "Update Lost Item Status"
     start_time = reporter.start_test(test_name)
-    response, _ = api_client.update_item_status(1, "approved", "lost")
+    response, _ = api_client.update_item_status(1, "rejected")
     success, message = reporter.assert_status_code(response, 200)
     reporter.end_test(test_name, start_time, success, message)
     
     # Update another item status (lost)
     test_name = "Update Another Lost Item Status"
     start_time = reporter.start_test(test_name)
-    response, _ = api_client.update_item_status(2, "approved", "lost")
+    response, _ = api_client.update_item_status(2, "active")
     success, message = reporter.assert_status_code(response, 200)
     reporter.end_test(test_name, start_time, success, message)
     
