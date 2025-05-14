@@ -160,7 +160,10 @@ class APIClient:
         start_time = time.time()
         endpoint = f"/found-items/{item_id}"
         
-        response = requests.get(f"{self.base_url}{endpoint}")
+        response = requests.get(
+            f"{self.base_url}{endpoint}",
+            headers={"Authorization": f"Bearer {self.user_token}"}
+        )
         
         elapsed = self._record_response_time(endpoint, "GET", start_time)
         return response, elapsed
@@ -185,7 +188,8 @@ class APIClient:
         
         response = requests.get(
             f"{self.base_url}{endpoint}",
-            params={"query": query_params}
+            params={"query": query_params},
+            headers={"Authorization": f"Bearer {self.user_token}"}
         )
         
         elapsed = self._record_response_time(endpoint, "GET", start_time)
