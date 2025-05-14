@@ -188,7 +188,7 @@ class APIClient:
         
         response = requests.get(
             f"{self.base_url}{endpoint}",
-            params={"query": query_params},
+            params=query_params,
             headers={"Authorization": f"Bearer {self.user_token}"}
         )
         
