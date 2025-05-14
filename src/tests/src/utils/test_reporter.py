@@ -72,7 +72,7 @@ class TestReporter:
     
     def summarize(self):
         """Print a summary of all test results"""
-        title = pyfiglet.figlet_format("Test Summary", font="slant", width=100)
+        title = "Test Summary"
         print(f"\n{Fore.CYAN}{title}{Style.RESET_ALL}")
         print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}\n")
         
