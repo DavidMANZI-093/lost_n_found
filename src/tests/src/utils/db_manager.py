@@ -46,6 +46,9 @@ class DatabaseManager:
             self.cursor.execute("TRUNCATE TABLE lost_items CASCADE")
             self.cursor.execute("TRUNCATE TABLE found_items CASCADE")
             self.cursor.execute("TRUNCATE TABLE users CASCADE")
+            self.cursor.execute("ALTER SEQUENCE lost_items_id_seq RESTART WITH 1")
+            self.cursor.execute("ALTER SEQUENCE found_items_id_seq RESTART WITH 1")
+            self.cursor.execute("ALTER SEQUENCE users_id_seq RESTART WITH 1")
             return True
         except Exception as e:
             print(f"❌ Error cleaning database: {e}")
