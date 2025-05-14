@@ -212,14 +212,14 @@ class APIClient:
         elapsed = self._record_response_time(endpoint, "PATCH", start_time)
         return response, elapsed
     
-    def update_item_status(self, item_id, status, item_type):
+    def update_item_status(self, item_id, status):
         """Update an item's status (admin only)"""
         start_time = time.time()
         endpoint = f"/admin/items/{item_id}"
         
         response = requests.patch(
             f"{self.base_url}{endpoint}",
-            json={"status": status, "type": item_type},
+            json={"status": status},
             headers={
                 "Authorization": f"Bearer {self.admin_token}",
                 "Content-Type": "application/json"
