@@ -19,7 +19,7 @@ class TestReporter:
     def set_stage(self, stage_name):
         """Set the current test stage"""
         self.current_stage = stage_name
-        title = pyfiglet.figlet_format(f"Stage: {stage_name}", font="slant", width=100)
+        title = f"Stage: {stage_name}"
         print(f"\n{Fore.CYAN}{title}{Style.RESET_ALL}")
         print(f"{Fore.CYAN}{'=' * 80}{Style.RESET_ALL}\n")
     
