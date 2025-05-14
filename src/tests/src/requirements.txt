@@ -5,3 +5,4 @@ pytest
 python-dotenv
 pyfiglet
 prettytable
+psycopg2-binary

@@ -1,6 +1,5 @@
-import psycopg2
+import py
 import json
-import os
 
 class DatabaseManager:
     def __init__(self, config_path="../info/config.json"):

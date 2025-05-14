@@ -66,12 +66,12 @@ def run_tests():
 
 def load_config():
     """Load configuration from JSON file"""
-    with open("info/config.json", "r") as f:
+    with open("./info/config.json", "r") as f:
         return json.load(f)
 
 def load_test_data():
     """Load test data from JSON file"""
-    with open("info/test_data.json", "r") as f:
+    with open("./info/test_data.json", "r") as f:
         return json.load(f)
 
 def run_authentication_tests(api_client, reporter, config, db_manager):
