@@ -113,7 +113,7 @@ public class FoundItemController {
             message.put("message", "Found item deleted successfully");
             
             return ResponseEntity.ok()
-                    .body(ApiResponse.success(204, "Found item deleted successfully", message));
+                    .body(ApiResponse.success(200, "Found item deleted successfully", message));
         } catch (Exception e) {
             if (e.getMessage().contains("authorized")) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)

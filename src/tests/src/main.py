@@ -161,7 +161,7 @@ def run_lost_item_tests(api_client, reporter, test_data):
     test_name = "Delete Lost Item"
     start_time = reporter.start_test(test_name)
     response, _ = api_client.delete_lost_item(3)
-    success, message = reporter.assert_status_code(response, 204)
+    success, message = reporter.assert_status_code(response, 200)
     reporter.end_test(test_name, start_time, success, message)
 
 def run_found_item_tests(api_client, reporter, test_data):
@@ -195,7 +195,7 @@ def run_found_item_tests(api_client, reporter, test_data):
     test_name = "Delete Found Item"
     start_time = reporter.start_test(test_name)
     response, _ = api_client.delete_found_item(1)
-    success, message = reporter.assert_status_code(response, 204)
+    success, message = reporter.assert_status_code(response, 200)
     reporter.end_test(test_name, start_time, success, message)
 
 def run_admin_tests(api_client, reporter):
