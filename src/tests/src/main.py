@@ -112,7 +112,7 @@ def run_authentication_tests(api_client, reporter, config, db_manager):
     response, _ = api_client.login_user(credentials)
     success, message = reporter.assert_status_code(response, 200)
     if success:
-        success, message = reporter.assert_json_key(response.json(), "jwt_token")
+        success, message = reporter.assert_json_key(response.json(), "token")
     reporter.end_test(test_name, start_time, success, message)
     
     # Test admin user login
@@ -123,9 +123,10 @@ def run_authentication_tests(api_client, reporter, config, db_manager):
         "password": config["users"]["admin"]["password"]
     }
     response, _ = api_client.login_user(credentials)
+    print(response.json())
     success, message = reporter.assert_status_code(response, 200)
     if success:
-        success, message = reporter.assert_json_key(response.json(), "jwt_token")
+        success, message = reporter.assert_json_key(response.json(), "token")
     reporter.end_test(test_name, start_time, success, message)
 
 def run_lost_item_tests(api_client, reporter, test_data):
