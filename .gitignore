@@ -36,3 +36,11 @@ logs/
 *.db
 *.mv.db
 *.h2.db
+
+# Virtual environment
+venv/
+.venv/
+env/
+envs/
+*venv
+**venv
