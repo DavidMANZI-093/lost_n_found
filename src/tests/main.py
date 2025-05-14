@@ -1,6 +1,10 @@
+import requests
+
 def __main__(self):
     self.cursor = PSQLConn().connect().cursor()
     self.base_url = "http://localhost:8080/api/v1"
+    self.user_token = None
+    self.admin_token = None
 
     requests.post(
         f"{self.base_url}/auth/signup",
@@ -25,6 +29,38 @@ def __main__(self):
             "lastName": "Doe",
             "phoneNumber": "0792222222",
             "address": "KK 38 Ave, Kigali"
+        },
+        headers={
+            "Content-Type": "application/json"
+        }
+    )
+
+    response = requests.post(
+        f"{self.base_url}/auth/login",
+        json={
+            "email": "johndoe@gmail.com",
+            "password": "john123"
+        },
+        headers={
+            "Content-Type": "application/json"
+        }
+    )
+
+    self.user_token = response.json().get("jwt_token")
+
+    requests.post(
+        f"{self.base_url}/lost-items",
+        json={
+            "title": "Lost Wallet",
+            "description": "Lost wallet with some cash and some cards",
+            "category": "Wallet",
+            "location": "UNILAK, Central Park",
+            "imageUrl": "https://dummywallet.com/image.jpg",
+            "lostDate": "2025-005-13T15:30:00Z"
+        },
+        headers={
+            "Authorization": f"Bearer {self.user_token}",
+            "Content-Type": "application/json"
         }
     )
 
