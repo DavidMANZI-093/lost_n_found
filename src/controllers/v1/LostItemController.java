@@ -113,7 +113,7 @@ public class LostItemController {
             message.put("message", "Lost item deleted successfully");
             
             return ResponseEntity.ok()
-                    .body(ApiResponse.success(200, "Lost item deleted successfully", message));
+                    .body(ApiResponse.success(204, "Lost item deleted successfully", message));
         } catch (Exception e) {
             if (e.getMessage().contains("authorized")) {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN)
