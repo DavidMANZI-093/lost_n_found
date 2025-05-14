@@ -1,5 +1,5 @@
 def __main__():
-    print("Hello World")
+    cursor = PSQLConn().connect().cursor()
 
 if __name__ == "__main__":
     __main__()

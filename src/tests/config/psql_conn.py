@@ -10,6 +10,19 @@ class PSQLConn:
 
     def connect(self):
         try:
-            self.c
+            self.conn = psycopg2.connect(
+                dbname=self.db_name,
+                user=self.user,
+                password=self.password,
+                host=self.host,
+                port=self.port
+            )
+        except Exception as e:
+            print(f"Error connecting to the database: {e}")
+            self.conn = None
+
+    def close(self):
+        if self.conn:
+            self.conn.close()
 
     
